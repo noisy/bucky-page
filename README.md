@@ -31,9 +31,10 @@ Plain `python3 website/build.py` uses the pages listed in `site.json`
 
 ### The APK
 
-Copy the release build to `website/downloads/bucky-latest.apk` before
-building (APKs are gitignored and never committed) and set the version in
-`site.json` (`apk.version`, a placeholder for now). Installing over an older
+The download button links to `bucky-latest.apk` on the latest GitHub release
+of this repository (`apk.path` in `site.json`), so APKs are never committed
+or deployed with the site. To ship a build, attach it to a new release and
+bump `apk.version`; see `downloads/README.md`. Installing over an older
 version keeps the kids' data because every build is signed with the same
 key.
 
@@ -45,7 +46,7 @@ key.
 | `src/pages/landing.html`, `src/pages/download.html` | Page templates, with `{{key}}` placeholders (`{{key\|url}}` URL-encodes) and `{{> partial}}` includes |
 | `src/partials/` | Shared `<head>` tags and the footer |
 | `src/strings/<lang>/common.json`, `<page>.json` | All copy per language. The build fails on a missing or unused key |
-| `downloads/` | Where the APK goes before a build (gitignored) |
+| `downloads/` | How to ship an APK (the file itself lives in releases) |
 | `src/index.html` | Root page: picks the language (see Languages), with plain links as a fallback |
 | `src/404.html`, `src/robots.txt` | Site-root files; the build adds `CNAME`, `.nojekyll` and `sitemap.xml` |
 | `static/css/site.css` | All styling. Brand tokens from `branding/palette/colors.json`, light and dark (`prefers-color-scheme`) |
@@ -126,8 +127,8 @@ pyftsubset assets/fonts/Fredoka-Bold.ttf --flavor=woff2 --layout-features='*' \
 - **Contact / early access.** The button is a `mailto:hello@example.com`
   placeholder (marked `data-todo="contact"` and with a TODO comment in
   `src/page.html`). Replace with the real address or a sign-up form.
-- **APK version** in `site.json` is a placeholder (`0.0.0`); set it per release
-  (or have the deploy job fill it in).
+- **APK version** in `site.json` is a placeholder (`0.0.0`); bump it with each
+  release.
 - **Store links.** Google Play and App Store badges once the listings exist
   (today: GitHub prerelease APKs and TestFlight).
 - **Legal pages.** A privacy policy page (the content is in
