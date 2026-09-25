@@ -29,7 +29,7 @@
   --line: rgba(114, 71, 79, 0.16);
   --accent: var(--bubblegum);
   --on-accent: var(--cocoa-deep);
-  --highlight: #E8747F;
+  --highlight: #D65A67;
   --phone-frame: var(--cocoa);
   --shadow: 0 1px 2px rgba(114, 71, 79, 0.08), 0 12px 32px -12px rgba(114, 71, 79, 0.28);
   --radius: 24px;
@@ -149,14 +149,14 @@ ul { padding: 0; margin: 0; list-style: none; }
 .hero::before {
   content: ""; position: absolute; inset: 0 0 auto 0; height: 100%; z-index: -1;
   background:
-    radial-gradient(40rem 26rem at 85% 20%, color-mix(in srgb, var(--candy) 55%, transparent), transparent 70%),
-    radial-gradient(26rem 16rem at 62% 62%, color-mix(in srgb, var(--mint) 55%, transparent), transparent 70%);
+    radial-gradient(55% 55% at 85% 20%, color-mix(in srgb, var(--candy) 55%, transparent), transparent 70%),
+    radial-gradient(40% 40% at 62% 62%, color-mix(in srgb, var(--mint) 55%, transparent), transparent 70%);
 }
 @media (prefers-color-scheme: dark) {
   .hero::before {
     background:
-      radial-gradient(40rem 26rem at 85% 20%, rgba(248, 157, 165, 0.13), transparent 70%),
-      radial-gradient(26rem 16rem at 62% 62%, rgba(143, 207, 168, 0.1), transparent 70%);
+      radial-gradient(55% 55% at 85% 20%, rgba(248, 157, 165, 0.13), transparent 70%),
+      radial-gradient(40% 40% at 62% 62%, rgba(143, 207, 168, 0.1), transparent 70%);
   }
 }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(24px, 5vw, 64px); align-items: center; }
@@ -331,7 +331,7 @@ ul { padding: 0; margin: 0; list-style: none; }
 .bank-card { position: relative; max-width: 420px; margin: 0 auto; width: 100%; padding-bottom: 40px; }
 .bank-card > img { width: 78%; border-radius: var(--radius); box-shadow: var(--shadow); }
 .phone-tilt { position: absolute; width: 52%; right: 0; top: 18%; transform: rotate(5deg); }
-@media (max-width: 900px) { .split { grid-template-columns: 1fr; } .bank-card { padding-bottom: 72px; } }
+@media (max-width: 900px) { .split { grid-template-columns: 1fr; } .bank-card { padding-bottom: 110px; } }
 @media (max-width: 560px) { .feature-list { grid-template-columns: 1fr; } }
 
 /* Parents */
