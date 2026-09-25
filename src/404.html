@@ -6,7 +6,7 @@
   <title>Page not found - Bucky</title>
   <meta name="color-scheme" content="light dark">
   <meta name="robots" content="noindex">
-  <!-- Absolute paths: a 404 page is served from whatever URL was missing. -->
+  <!-- Root-relative paths: GitHub Pages serves this page at whatever URL was missing. -->
   <link rel="icon" href="/static/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="stylesheet" href="/static/css/site.css">
 </head>
@@ -15,10 +15,7 @@
     <img src="/static/img/bucky-oops.webp" alt="" width="320" height="276">
     <h1>Oops! This page is gone.</h1>
     <p lang="pl">Ups! Tej strony nie ma.</p>
-    <ul class="chooser-links">
-      <li><a class="btn btn-primary" href="/en/" hreflang="en" lang="en">Home</a></li>
-      <li><a class="btn btn-primary" href="/pl/" hreflang="pl" lang="pl">Strona główna</a></li>
-    </ul>
+    <ul class="chooser-links">{{home_buttons_absolute}}</ul>
   </main>
 </body>
 </html>

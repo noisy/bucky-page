@@ -131,11 +131,22 @@ ul { padding: 0; margin: 0; list-style: none; }
 .nav a:hover { background: var(--surface-soft); }
 .header-actions { display: flex; align-items: center; gap: 10px; }
 .header-actions.end { margin-left: auto; }
-.lang {
-  display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%;
-  border: 2px solid var(--line); text-decoration: none; font: 700 0.85rem/1 var(--font-display);
+.lang-menu { position: relative; }
+.lang-menu summary {
+  list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+  height: 42px; padding: 0 12px; border-radius: 999px; border: 2px solid var(--line);
+  font: 700 0.85rem/1 var(--font-display); color: var(--text);
 }
-.lang:hover { border-color: var(--text); }
+.lang-menu summary::-webkit-details-marker { display: none; }
+.lang-menu summary:hover, .lang-menu[open] summary { border-color: var(--text); }
+.lang-menu svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.lang-options {
+  position: absolute; right: 0; top: calc(100% + 8px); min-width: 160px; padding: 6px; z-index: 60;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-small); box-shadow: var(--shadow);
+}
+.lang-options a { display: block; padding: 9px 12px; border-radius: 10px; text-decoration: none; font-weight: 700; }
+.lang-options a:hover { background: var(--surface-soft); }
+.lang-options a[aria-current] { background: var(--mint); color: var(--cocoa-deep); }
 @media (max-width: 920px) {
   .nav { display: none; }
   .header-actions { margin-left: auto; }
@@ -461,7 +472,8 @@ ul { padding: 0; margin: 0; list-style: none; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; }
 .footer-logo { width: 140px; margin-bottom: 14px; }
 .footer-head { font-size: 1rem; font-weight: 600; margin-bottom: 0.6em; }
-.footer-langs { display: flex; gap: 16px; margin-bottom: 12px; font-weight: 700; }
+.footer-langs { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 12px; font-weight: 700; }
+.footer-langs a[aria-current] { text-decoration: none; }
 @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; } }
 
 /* Language chooser and 404 */

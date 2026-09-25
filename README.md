@@ -41,22 +41,55 @@ key.
 
 | Path | What |
 |---|---|
-| `site.json` | Which pages are published, APK path and version |
+| `site.json` | Pages, languages, domains, `CNAME`, APK path and version |
 | `src/pages/landing.html`, `src/pages/download.html` | Page templates, with `{{key}}` placeholders (`{{key\|url}}` URL-encodes) and `{{> partial}}` includes |
 | `src/partials/` | Shared `<head>` tags and the footer |
 | `src/strings/<lang>/common.json`, `<page>.json` | All copy per language. The build fails on a missing or unused key |
 | `downloads/` | Where the APK goes before a build (gitignored) |
-| `src/index.html` | Root page: sends visitors to their saved or browser language, with plain links as a fallback |
-| `src/404.html`, `src/robots.txt` | Copied to the site root as they are |
+| `src/index.html` | Root page: picks the language (see Languages), with plain links as a fallback |
+| `src/404.html`, `src/robots.txt` | Site-root files; the build adds `CNAME`, `.nojekyll` and `sitemap.xml` |
 | `static/css/site.css` | All styling. Brand tokens from `branding/palette/colors.json`, light and dark (`prefers-color-scheme`) |
 | `static/js/site.js` | Remembers the language picked in the switcher; header hairline on scroll. The page works without it |
 | `static/fonts/` | Fredoka and Nunito (SIL OFL), subset to Latin and Polish letters as woff2 |
 | `static/img/` | Optimised WebP artwork and app screenshots (generated, see below) |
 | `tools/prepare_images.py` | Regenerates `static/img/` from `assets/images/`, `branding/` and the screenshot tests |
 
-To add a language: copy `src/strings/en/` to `src/strings/<lang>/`, translate,
-render the app screenshots for that locale and add it to the language
-links in `src/page.html` and `src/index.html`.
+### Languages
+
+English and Polish today; everything is keyed by language, so more can be
+added without touching the templates:
+
+1. Copy `src/strings/en/` to `src/strings/<lang>/` and translate it
+   (`language_name` is the language's own name, e.g. "Deutsch").
+2. Add the code to `languages` in `site.json`.
+3. Render the app screenshots for that locale (see below) or point the
+   landing template at an existing locale's screenshots.
+
+The switcher in the header and the footer lists every language and keeps
+the visitor on the same page. The root page `/` picks a language in this
+order: an explicit earlier choice (saved in `localStorage` when a language
+link is clicked), the domain (`domain_languages`: bucky.pl opens Polish),
+the browser's `navigator.languages`, then `default_language` (English).
+Every page has its own `<html lang>`, translated title and description,
+`hreflang` alternates, a canonical link and `og:` tags.
+
+### Hosting (GitHub Pages)
+
+The build is made for GitHub Pages on a custom domain, but nothing is
+deployed from here. Publish the contents of `website/dist/` (for example
+with `actions/upload-pages-artifact` + `actions/deploy-pages`, running
+`python3 website/build.py` first). `dist/` already contains:
+
+- `CNAME` with `bucky.pl` (from `cname` in `site.json`),
+- `404.html` (root-relative links, as GitHub Pages serves it at any path),
+- `.nojekyll`, `robots.txt` and `sitemap.xml`.
+
+Links between pages are relative, so the site also works from a subfolder
+(except the 404 page). Absolute URLs (canonical, hreflang, `og:image`,
+sitemap) come from `site_url` (`https://bucky.pl`). When an international
+domain exists, set it per language in `language_site_urls`
+(e.g. `{"en": "https://<domain>"}`) and add it to `domain_languages`; no
+code changes needed.
 
 ### Images and screenshots
 
@@ -86,10 +119,10 @@ pyftsubset assets/fonts/Fredoka-Bold.ttf --flavor=woff2 --layout-features='*' \
 
 ## TODO
 
-- **Domain and hosting.** Not chosen. Any static host works (GitHub Pages,
-  Cloudflare Pages, Netlify); nothing is deployed yet.
-- **Absolute URLs** once the domain is known: `og:url`, absolute `og:image`,
-  canonical links and a `sitemap.xml` (see the TODO in `src/robots.txt`).
+- **Deployment.** GitHub Pages with bucky.pl is planned; the workflow and
+  DNS are not set up here.
+- **International domain.** Not chosen; set `language_site_urls` and
+  `domain_languages` in `site.json` when it is.
 - **Contact / early access.** The button is a `mailto:hello@example.com`
   placeholder (marked `data-todo="contact"` and with a TODO comment in
   `src/page.html`). Replace with the real address or a sign-up form.

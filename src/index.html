@@ -3,33 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bucky - screen time your kids earn</title>
-  <meta name="description" content="A kids video app where watching is earned in short lessons. Czas przed ekranem, na który dzieci zapracowały.">
+  <title>Bucky</title>
+  <meta name="description" content="Bucky: screen time your kids earn. Czas przed ekranem, na który dzieci zapracowały.">
   <meta name="color-scheme" content="light dark">
-  <link rel="alternate" hreflang="en" href="en/">
-  <link rel="alternate" hreflang="pl" href="pl/">
+{{hreflang_links}}
   <link rel="icon" href="static/img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="stylesheet" href="static/css/site.css">
   <script>
-    // Sends visitors to their saved language, or to Polish when the browser prefers it.
-    (function () {
+    // Picks the language: an explicit earlier choice, then the domain (bucky.pl is Polish),
+    // then the browser's preferred languages, then the fallback.
+    (function (config) {
+      var available = function (code) { return config.languages.indexOf(code) !== -1 ? code : null; };
       var saved = null;
-      try { saved = localStorage.getItem("bucky-lang"); } catch (e) {}
-      var languages = navigator.languages || [navigator.language || ""];
-      var prefersPolish = languages.some(function (l) { return /^pl\b/i.test(l); });
-      var target = saved === "pl" || saved === "en" ? saved : (prefersPolish ? "pl" : "en");
-      location.replace(target + "/");
-    })();
+      try { saved = available(localStorage.getItem("bucky-lang")); } catch (e) {}
+      var byDomain = available(config.domains[location.hostname.toLowerCase()] || "");
+      var byBrowser = null;
+      var preferred = navigator.languages || [navigator.language || ""];
+      for (var i = 0; i < preferred.length && !byBrowser; i++) {
+        byBrowser = available(String(preferred[i]).toLowerCase().split("-")[0]);
+      }
+      location.replace((saved || byDomain || byBrowser || config.fallback) + "/" + location.hash);
+    })({{language_detection}});
   </script>
 </head>
 <body class="chooser">
   <main class="chooser-card">
     <img src="static/img/bucky-happy.webp" alt="" width="320" height="276">
     <h1>Bucky</h1>
-    <ul class="chooser-links">
-      <li><a class="btn btn-primary" href="en/" hreflang="en" lang="en">English</a></li>
-      <li><a class="btn btn-primary" href="pl/" hreflang="pl" lang="pl">Polski</a></li>
-    </ul>
+    <ul class="chooser-links">{{language_buttons}}</ul>
   </main>
 </body>
 </html>
