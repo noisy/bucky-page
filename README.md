@@ -31,10 +31,12 @@ Plain `python3 website/build.py` uses the pages listed in `site.json`
 
 ### The APK
 
-The download button links to `bucky-latest.apk` on the latest GitHub release
-of this repository (`apk.path` in `site.json`), so APKs are never committed
-or deployed with the site. To ship a build, attach it to a new release and
-bump `apk.version`; see `downloads/README.md`. Installing over an older
+The download button links to a versioned APK, e.g. `bucky-0.2.0-373.apk`,
+attached to the release of the same tag in this repository (`apk.path` in
+`site.json`), and the version shows under the button (`apk.version`). APKs
+are never committed or deployed with the site. Each Bucky release does this
+automatically (`scripts/ci/publish_website_apk.sh` in noisy/Bucky); see
+`downloads/README.md`. Installing over an older
 version keeps the kids' data because every build is signed with the same
 key.
 
