@@ -49,8 +49,10 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">{{hero_eyebrow}}</p>
-          <h1>{{hero_title}}</h1>
+          <div class="hero-title-row">
+            <img class="hero-mini" src="{{root}}static/img/bucky.webp" sizes="40vw" alt="" fetchpriority="high">
+            <h1>{{hero_title}}</h1>
+          </div>
           <p class="lead">{{hero_lead}}</p>
           <div class="hero-actions" data-hero-actions>
             <a class="btn btn-primary btn-big" href="{{href_download}}">
