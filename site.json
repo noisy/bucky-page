@@ -17,6 +17,6 @@
   "cname": "bucky.club",
   "apk": {
     "path": "https://github.com/noisy/bucky-page/releases/latest/download/bucky-latest.apk",
-    "version": "0.0.0"
+    "version": "0.2.0 (373)"
   }
 }
