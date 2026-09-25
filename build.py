@@ -14,6 +14,8 @@ Settings live in site.json:
   language_site_urls   per-language override, e.g. an international domain for en
   cname              written to dist/CNAME for GitHub Pages ("" for none)
   apk                path and version of the Android download
+  beta               iOS beta sign-up: Firebase web config, SDK URL, App Check,
+                     consent version and contact address (see README)
 
 Templates are src/pages/<page>.html with {{key}} placeholders ({{key|url}}
 URL-encodes) and {{> partial}} includes from src/partials/. Strings come from
@@ -178,9 +180,10 @@ class Site:
             "hreflang_links": self.hreflang_links(page, here),
             "og_image": absolute(self.config, language, OG_IMAGE) or relative(here, OG_IMAGE),
             "og_url": f'  <meta property="og:url" content="{own_url}">' if own_url else "",
+            **self.beta_values(),
         }
         for other in self.pages:
-            values[f"href_{other}"] = relative(here, page_path(self.pages, other, language))
+            values[f"href_{other.replace('-', '_')}"] = relative(here, page_path(self.pages, other, language))
         template = with_partials((SOURCE / "pages" / f"{page}.html").read_text())
         page_html, used = fill(template, values, f"{language}/{page}")
         unused = strings.keys() - used
@@ -188,6 +191,16 @@ class Site:
             sys.exit(f"{language}/{page}: unused strings {sorted(unused)}")
         write(here + "index.html", responsive_images(page_html, self.images, f"{language}/{page}"))
         return used
+
+    def beta_values(self) -> dict[str, str]:
+        """Settings of the iOS beta form; the config goes into the page as JSON for static/js/beta.js."""
+        beta = self.config["beta"]
+        config = {key: beta[key] for key in ("firebase", "sdk_url", "app_check", "consent_version")}
+        return {
+            "beta_config": json.dumps(config).replace("<", "\\u003c"),
+            "beta_consent_version": beta["consent_version"],
+            "beta_contact_email": beta["contact_email"],
+        }
 
     def build_root_files(self) -> None:
         """Language chooser at /, the 404 page, robots.txt and the GitHub Pages files."""

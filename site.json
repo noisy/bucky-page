@@ -1,7 +1,9 @@
 {
   "pages": [
     "landing",
-    "download"
+    "download",
+    "beta",
+    "beta-privacy"
   ],
   "languages": [
     "en",
@@ -18,5 +20,20 @@
   "apk": {
     "path": "https://github.com/noisy/bucky-page/releases/download/v0.2.0-build.373/bucky-0.2.0-373.apk",
     "version": "0.2.0 (373)"
+  },
+  "beta": {
+    "firebase": {
+      "projectId": "bucky-3511c",
+      "apiKey": "",
+      "appId": ""
+    },
+    "sdk_url": "https://www.gstatic.com/firebasejs/12.19.0",
+    "app_check": {
+      "enabled": false,
+      "provider": "recaptcha-enterprise",
+      "site_key": ""
+    },
+    "consent_version": "2026-09-25",
+    "contact_email": "hello@bucky.club"
   }
 }

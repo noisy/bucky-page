@@ -340,8 +340,10 @@
           <div>
             <h2>{{cta_title}}</h2>
             <p>{{cta_text}}</p>
-            <!-- TODO: real contact address or sign-up form (no backend yet) -->
-            <a class="btn btn-primary" href="mailto:hello@example.com?subject={{cta_mail_subject|url}}" data-todo="contact">{{cta_long}}</a>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="{{href_beta}}">{{cta_long}}</a>
+              <a class="btn btn-ghost" href="{{href_download}}">{{hero_download}}</a>
+            </div>
             <p class="small">{{cta_small}}</p>
           </div>
         </div>

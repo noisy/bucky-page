@@ -1,0 +1,23 @@
+{
+  "meta_title": "Beta Bucky'ego na iPhone'a: informacja o prywatności",
+  "meta_description": "Co Bucky przechowuje, gdy zapisujesz się do bety na iPhone'a i iPada, po co, jak długo i jak to usunąć.",
+  "title": "Beta na iPhone'a: prywatność",
+  "intro": "Gdy zapisujesz się do bety Bucky'ego na iPhone'a i iPada, przechowujemy jak najmniej i tylko na potrzeby bety.",
+  "updated_label": "Ostatnia zmiana",
+  "what_title": "Co przechowujemy",
+  "what_1": "Twój adres e-mail.",
+  "what_2": "Język, który wybierasz dla naszych wiadomości.",
+  "what_3": "Przedziały wieku dzieci, jeśli je zaznaczysz. Bez imion i dat urodzenia.",
+  "what_4": "Kiedy się zapisujesz, na którą wersję tej informacji się zgadzasz i kiedy Cię zaprosiliśmy.",
+  "why_title": "Po co",
+  "why_text": "Tylko po to, żeby zaprosić Cię do bety i pisać do Ciebie w jej sprawie. Przedziały wieku pomagają nam zapraszać rodziny, do których dzieci pasują lekcje. Bez newslettera i reklam, a Twojego e-maila nigdy nie sprzedajemy ani nie udostępniamy do marketingu. Przechowujemy go, bo się na to zgadzasz, i w każdej chwili możesz tę zgodę wycofać.",
+  "where_title": "Gdzie to jest i kto to widzi",
+  "where_text": "W naszej bazie Google Firebase w UE (w Warszawie). Czytać ją możemy tylko my. Żeby Cię zaprosić, przekazujemy Twój e-mail firmie Apple, która wysyła zaproszenie z TestFlight i prowadzi betę według własnej polityki prywatności. Strona zapisów wczytuje kod Google Firebase dopiero wtedy, gdy wysyłasz formularz. Na tej stronie nie ma trackerów ani ciasteczek reklamowych.",
+  "how_long_title": "Jak długo",
+  "how_long_text": "Do końca bety, ale nigdy dłużej niż 12 miesięcy od zapisu. Potem usuwamy Twój zapis i usuwamy Cię z TestFlight.",
+  "delete_title": "Usunięcie danych",
+  "delete_text": "Z bety możesz wypisać się w każdej chwili w aplikacji TestFlight. Jeśli chcesz, żebyśmy usunęli też Twój zapis albo pokazali lub poprawili to, co przechowujemy, napisz z e-maila podanego przy zapisie na adres",
+  "delete_subject": "Usuń mój zapis do bety Bucky'ego",
+  "rights_text": "Usuwamy go w ciągu 30 dni i odpisujemy, gdy to zrobimy. Jeśli uważasz, że źle obchodzimy się z Twoimi danymi, możesz złożyć skargę do organu ochrony danych (w Polsce to UODO).",
+  "back_to_form": "Wróć do zapisów"
+}

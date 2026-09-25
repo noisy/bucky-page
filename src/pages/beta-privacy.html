@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+{{> head}}
+</head>
+<body>
+  <a class="skip" href="#main">{{skip_to_content}}</a>
+
+  <header class="site-header" data-header>
+    <div class="wrap header-row">
+      <a class="brand" href="{{home_href}}" aria-label="{{brand_home}}">
+        <img src="{{root}}static/img/logo.webp" sizes="120px" alt="Bucky">
+      </a>
+      <div class="header-actions">
+        {{language_menu}}
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="download note-page">
+    <article class="wrap note">
+      <img class="head-art" src="{{root}}static/img/pal-sleepy.webp" sizes="96px" alt="">
+      <h1>{{title}}</h1>
+      <p class="lead">{{intro}}</p>
+      <p class="small">{{updated_label}} {{beta_consent_version}}</p>
+
+      <h2>{{what_title}}</h2>
+      <ul class="note-list">
+        <li>{{what_1}}</li>
+        <li>{{what_2}}</li>
+        <li>{{what_3}}</li>
+        <li>{{what_4}}</li>
+      </ul>
+
+      <h2>{{why_title}}</h2>
+      <p>{{why_text}}</p>
+
+      <h2>{{where_title}}</h2>
+      <p>{{where_text}}</p>
+
+      <h2>{{how_long_title}}</h2>
+      <p>{{how_long_text}}</p>
+
+      <h2>{{delete_title}}</h2>
+      <p>{{delete_text}} <a href="mailto:{{beta_contact_email}}?subject={{delete_subject|url}}">{{beta_contact_email}}</a>.</p>
+      <p>{{rights_text}}</p>
+
+      <p class="back"><a class="btn btn-ghost" href="{{href_beta}}">{{back_to_form}}</a></p>
+    </article>
+  </main>
+
+{{> footer}}
+</body>
+</html>

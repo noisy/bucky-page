@@ -1,10 +1,12 @@
 # Bucky website
 
 The public site for Bucky, in English (`/en/`) and Polish (`/pl/`): a
-landing page and a simple download page for the Android APK.
+landing page, a simple download page for the Android APK, and the iPhone
+and iPad beta sign-up with its privacy note.
 Plain static HTML, one stylesheet and a few lines of JavaScript. No
 frameworks, no trackers, no third-party requests: fonts and images are
-served from this folder.
+served from this folder. The one exception is the beta form, which loads
+Google's Firebase SDK when it is sent (see iOS beta sign-up).
 
 ## Preview locally
 
@@ -45,7 +47,7 @@ key.
 | Path | What |
 |---|---|
 | `site.json` | Pages, languages, domains, `CNAME`, APK path and version |
-| `src/pages/landing.html`, `src/pages/download.html` | Page templates, with `{{key}}` placeholders (`{{key\|url}}` URL-encodes) and `{{> partial}}` includes |
+| `src/pages/landing.html`, `download.html`, `beta.html`, `beta-privacy.html` | Page templates, with `{{key}}` placeholders (`{{key\|url}}` URL-encodes) and `{{> partial}}` includes. Links between pages are `{{href_<page>}}`, with `-` written as `_` (`{{href_beta_privacy}}`) |
 | `src/partials/` | Shared `<head>` tags and the footer |
 | `src/strings/<lang>/common.json`, `<page>.json` | All copy per language. The build fails on a missing or unused key |
 | `downloads/` | How to ship an APK (the file itself lives in releases) |
@@ -53,6 +55,7 @@ key.
 | `src/404.html`, `src/robots.txt` | Site-root files; the build adds `CNAME`, `.nojekyll` and `sitemap.xml` |
 | `static/css/site.css` | All styling, mobile first: base rules for 360-430px phones, `min-width` queries add tablet (600px), laptop (900px) and wide (1100px). Brand tokens from the app palette, light and dark (`prefers-color-scheme`) |
 | `static/js/site.js` | Remembers the language picked in the switcher, closes the menus, hides the phone download dock while the hero button is on screen. The page works without it |
+| `static/js/beta.js` | The iOS beta sign-up form (only on `/<lang>/beta/`) |
 | `static/fonts/` | Fredoka and Nunito (SIL OFL), subset to Latin and Polish letters as woff2 |
 | `static/img/` | Optimised WebP artwork and app screenshots (generated, see below) |
 | `tools/prepare_images.py` | Regenerates `static/img/` (all widths and the manifest) from the app repo art and screenshots |
@@ -94,6 +97,29 @@ The other domains redirect to it: buckyclub.com and bucky.kids forward to
 https://bucky.club (GoDaddy), and bucky.pl lands on https://bucky.club/pl/
 (the noisy/bucky-pl-redirect Pages site), so Polish visitors stay in Polish.
 
+### iOS beta sign-up
+
+`/<lang>/beta/` collects emails for the private TestFlight beta; the
+download page's iPhone note and the landing page's early access box link
+to it. The form writes one document, `betaSignups/<SHA-256 of the email>`,
+to Firestore in the Bucky Firebase project. The Firestore rules and the
+invite workflow live in noisy/Bucky (`firestore.rules`, `docs/beta.md`).
+
+`beta` in `site.json`:
+
+| Key | What |
+|---|---|
+| `firebase` | Firebase web config. `projectId` is enough for Firestore; `apiKey` and `appId` come from a registered Firebase Web app and are needed for App Check. They are public values, not secrets. An empty `projectId` makes the form say sign-ups open soon |
+| `sdk_url` | Firebase JS SDK on the official CDN (`www.gstatic.com/firebasejs/<version>`). It is imported only when the form is sent, so opening the page makes no third-party request |
+| `app_check` | `enabled`, `provider` (`recaptcha-enterprise` or `recaptcha-v3`) and `site_key`. Off until the keys exist; turning it on also means mentioning reCAPTCHA in the privacy note |
+| `consent_version` | Date of the privacy note, stored with every sign-up. Bump it whenever the note changes |
+| `contact_email` | Where deletion requests go (shown on the privacy note) |
+
+Test the form locally against the Firestore emulator (in a Bucky checkout:
+`firebase emulators:start --only firestore --project demo-bucky`), with
+`projectId` set to `demo-bucky` and `?emulator=127.0.0.1:8080` added to the
+page URL on localhost.
+
 ### Images and screenshots
 
 Every picture is committed in a few widths (`static/img/<name>-<width>.webp`,
@@ -133,9 +159,8 @@ pyftsubset assets/fonts/Fredoka-Bold.ttf --flavor=woff2 --layout-features='*' \
 
 ## TODO
 
-- **Contact / early access.** The button is a `mailto:hello@example.com`
-  placeholder (marked `data-todo="contact"` and with a TODO comment in
-  `src/page.html`). Replace with the real address or a sign-up form.
+- **Contact address.** `beta.contact_email` in `site.json` must be a real,
+  read mailbox before the beta form goes live.
 - **APK version** in `site.json` is a placeholder (`0.0.0`); bump it with each
   release.
 - **Store links.** Google Play and App Store badges once the listings exist

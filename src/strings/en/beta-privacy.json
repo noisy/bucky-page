@@ -1,0 +1,23 @@
+{
+  "meta_title": "Bucky iPhone beta: privacy note",
+  "meta_description": "What Bucky keeps when you sign up for the iPhone and iPad beta, why, for how long, and how to have it deleted.",
+  "title": "iPhone beta: privacy note",
+  "intro": "When you sign up for the Bucky beta on iPhone and iPad, we keep as little as we can and only for the beta.",
+  "updated_label": "Last updated",
+  "what_title": "What we keep",
+  "what_1": "Your email address.",
+  "what_2": "The language you picked for our messages.",
+  "what_3": "Your kids' age ranges, if you chose any. No names, no birthdays.",
+  "what_4": "When you signed up, which version of this note you agreed to, and when we invited you.",
+  "why_title": "Why",
+  "why_text": "Only to invite you to the beta and to write to you about it. The age ranges help us invite families whose kids fit the lessons. No newsletter, no ads, and we never sell or share your email for marketing. We keep it because you agreed to it, and you can take that back at any time.",
+  "where_title": "Where it is kept and who sees it",
+  "where_text": "In our Google Firebase database in the EU (Warsaw). Only we can read it. To invite you, we give your email to Apple, who sends the TestFlight invitation and runs the beta under Apple's own privacy policy. The sign-up page loads Google's Firebase code only when you send the form. There are no trackers or ad cookies on this site.",
+  "how_long_title": "How long",
+  "how_long_text": "Until the beta ends, and never longer than 12 months after you signed up. Then we delete your sign-up and remove you from TestFlight.",
+  "delete_title": "Deleting your data",
+  "delete_text": "You can leave the beta at any time in the TestFlight app. To have your sign-up deleted too, or to see or correct what we keep, write from the email you signed up with to",
+  "delete_subject": "Delete my Bucky beta sign-up",
+  "rights_text": "We delete it within 30 days and write back when it's done. If you think we handle your data badly, you can complain to your data protection authority (in Poland, UODO).",
+  "back_to_form": "Back to the sign-up"
+}

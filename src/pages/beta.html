@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+{{> head}}
+  <script type="application/json" id="beta-config">{{beta_config}}</script>
+  <script type="module" src="{{root}}static/js/beta.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">{{skip_to_content}}</a>
+
+  <header class="site-header" data-header>
+    <div class="wrap header-row">
+      <a class="brand" href="{{home_href}}" aria-label="{{brand_home}}">
+        <img src="{{root}}static/img/logo.webp" sizes="120px" alt="Bucky">
+      </a>
+      <div class="header-actions">
+        {{language_menu}}
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="download beta">
+    <section class="wrap download-hero">
+      <div class="download-title">
+        <img class="download-bucky" src="{{root}}static/img/bucky-excited.webp" sizes="(min-width: 900px) 300px, 108px" alt="{{alt_bucky}}" fetchpriority="high">
+        <h1>{{title}}</h1>
+      </div>
+      <p class="lead download-intro">{{intro}}</p>
+
+      <div class="card beta-card">
+        <form class="beta-form" data-beta-form novalidate>
+          <div class="field">
+            <label for="beta-email">{{email_label}}</label>
+            <input id="beta-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="off" spellcheck="false" maxlength="254" required aria-describedby="beta-email-hint">
+            <p class="hint" id="beta-email-hint">{{email_hint}}</p>
+          </div>
+
+          <fieldset class="field">
+            <legend>{{language_label}}</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="language" value="en" data-default-for="en"><span>English</span></label>
+              <label class="choice"><input type="radio" name="language" value="pl" data-default-for="pl"><span>Polski</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend>{{ages_label}} <span class="optional">{{optional}}</span></legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="kidsAges" value="0-4"><span>{{age_0_4}}</span></label>
+              <label class="choice"><input type="checkbox" name="kidsAges" value="5-7"><span>{{age_5_7}}</span></label>
+              <label class="choice"><input type="checkbox" name="kidsAges" value="8-10"><span>{{age_8_10}}</span></label>
+              <label class="choice"><input type="checkbox" name="kidsAges" value="11-plus"><span>{{age_11_plus}}</span></label>
+            </div>
+          </fieldset>
+
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span>{{consent_text}} <a href="{{href_beta_privacy}}">{{consent_link}}</a></span>
+          </label>
+
+          <p class="form-message" data-message="invalid-email" role="alert" hidden>{{invalid_email}}</p>
+          <p class="form-message" data-message="need-consent" role="alert" hidden>{{need_consent}}</p>
+          <p class="form-message" data-message="error" role="alert" hidden>{{error_text}}</p>
+          <p class="form-message" data-message="closed" role="alert" hidden>{{closed_text}}</p>
+
+          <button class="btn btn-primary btn-big" type="submit" data-submit>
+            <span data-label-idle>{{submit}}</span>
+            <span data-label-busy hidden>{{submitting}}</span>
+          </button>
+          <noscript><p class="small">{{noscript}}</p></noscript>
+        </form>
+
+        <div class="beta-done" data-done="success" tabindex="-1" hidden>
+          <img src="{{root}}static/img/bucky-celebrating.webp" sizes="120px" alt="">
+          <h2>{{success_title}}</h2>
+          <p>{{success_text}}</p>
+        </div>
+        <div class="beta-done" data-done="duplicate" tabindex="-1" hidden>
+          <img src="{{root}}static/img/bucky-happy.webp" sizes="120px" alt="">
+          <h2>{{duplicate_title}}</h2>
+          <p>{{duplicate_text}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap install" aria-labelledby="next-title">
+      <h2 id="next-title">{{next_title}}</h2>
+      <ol class="install-steps">
+        <li class="card"><strong>{{next1_title}}</strong> {{next1_text}}</li>
+        <li class="card"><strong>{{next2_title}}</strong> {{next2_text}}</li>
+        <li class="card"><strong>{{next3_title}}</strong> {{next3_text}}</li>
+      </ol>
+      <div class="card install-note">
+        <img src="{{root}}static/img/pal-sleepy.webp" sizes="72px" alt="" loading="lazy">
+        <p>{{privacy_short}} <a href="{{href_beta_privacy}}">{{privacy_link}}</a></p>
+      </div>
+      <p class="back"><a class="btn btn-ghost" href="{{href_download}}">{{android_link}}</a></p>
+    </section>
+  </main>
+
+{{> footer}}
+</body>
+</html>

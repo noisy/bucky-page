@@ -35,7 +35,13 @@
         <p class="small">{{version_label}} {{apk_version}}, {{requirements}}</p>
       </div>
       <p class="lead download-intro">{{intro}}</p>
-      <p class="card ios-note"><img src="{{root}}static/img/pal-sleepy.webp" sizes="44px" alt=""><span><strong>{{ios_title}}</strong> {{ios_text}}</span></p>
+      <div class="card ios-note">
+        <img src="{{root}}static/img/pal-sleepy.webp" sizes="44px" alt="">
+        <div>
+          <p><strong>{{ios_title}}</strong> {{ios_text}}</p>
+          <a class="btn btn-primary btn-small" href="{{href_beta}}">{{ios_button}}</a>
+        </div>
+      </div>
     </section>
 
     <section class="wrap install" aria-labelledby="install-title">
