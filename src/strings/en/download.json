@@ -19,5 +19,6 @@
   "step4_title": "Install and open.",
   "step4_text": "Tap Install, then Open. The first time you open parent mode, you choose a PIN.",
   "warning_note": "Android will warn you that the app is not from the Play Store. That is expected: Bucky isn't in the store yet. If Play Protect asks, choose \"More details\" and then \"Install anyway\".",
-  "update_note": "To update, download the newest file from this page and install it over the old one. Pals, kids and settings stay where they are."
+  "update_note": "To update, download the newest file from this page and install it over the old one. Pals, kids and settings stay where they are.",
+  "back_home": "More about Bucky"
 }

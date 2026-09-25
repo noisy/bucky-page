@@ -36,6 +36,10 @@ DIST = ROOT / "dist"
 PARTIAL = re.compile(r"\{\{>\s*([a-z0-9_-]+)\s*\}\}")
 PLACEHOLDER = re.compile(r"\{\{\s*([a-z0-9_]+)(\|url)?\s*\}\}")
 OG_IMAGE = "static/img/og.jpg"
+IMAGE_MANIFEST = ROOT / "static" / "img" / "manifest.json"
+IMG_TAG = re.compile(r"<img\b[^>]*>")
+IMG_SRC = re.compile(r'src="([^"]*?)static/img/([^"]+)\.webp"')
+IMG_SIZE_ATTRS = re.compile(r'\s(?:width|height|srcset)="[^"]*"')
 # Common strings the build itself uses (language menus), not the templates.
 BUILD_STRINGS = {"language_name", "language_short", "language_menu_label"}
 
@@ -59,6 +63,36 @@ def fill(template: str, values: dict[str, str], where: str) -> tuple[str, set[st
         return quote(values[key]) if url_filter else values[key]
 
     return PLACEHOLDER.sub(value, template), used
+
+
+def responsive_images(page_html: str, manifest: dict, where: str) -> str:
+    """Gives every <img src=".../static/img/<name>.webp"> the srcset of its generated widths.
+
+    Templates name the picture without a width and say how wide it is shown
+    (sizes="..."); the browser then downloads the smallest file that is sharp
+    enough, so phones get small WebP files.
+    """
+
+    def rewrite(match: re.Match) -> str:
+        tag = match.group(0)
+        src = IMG_SRC.search(tag)
+        if not src:
+            return tag
+        prefix, name = src.groups()
+        if name not in manifest:
+            sys.exit(f"{where}: no generated image '{name}' (run tools/prepare_images.py)")
+        if "sizes=" not in tag:
+            sys.exit(f"{where}: <img> of '{name}' needs a sizes attribute")
+        widths, ratio = manifest[name]["widths"], manifest[name]["ratio"]
+        srcset = ", ".join(f"{prefix}static/img/{name}-{width}.webp {width}w" for width in widths)
+        fallback = widths[len(widths) // 2]
+        attributes = (
+            f'src="{prefix}static/img/{name}-{fallback}.webp" srcset="{srcset}" '
+            f'width="{widths[-1]}" height="{round(widths[-1] * ratio)}"'
+        )
+        return IMG_SRC.sub(attributes, IMG_SIZE_ATTRS.sub("", tag), count=1)
+
+    return IMG_TAG.sub(rewrite, page_html)
 
 
 def page_path(pages: list[str], page: str, language: str) -> str:
@@ -86,6 +120,7 @@ class Site:
         self.config = site
         self.pages = site["pages"]
         self.languages = site["languages"]
+        self.images = load_json(IMAGE_MANIFEST)
         self.common = {language: load_json(SOURCE / "strings" / language / "common.json") for language in self.languages}
 
     def name(self, language: str) -> str:
@@ -151,7 +186,7 @@ class Site:
         unused = strings.keys() - used
         if unused:
             sys.exit(f"{language}/{page}: unused strings {sorted(unused)}")
-        write(here + "index.html", page_html)
+        write(here + "index.html", responsive_images(page_html, self.images, f"{language}/{page}"))
         return used
 
     def build_root_files(self) -> None:
@@ -176,7 +211,7 @@ class Site:
         }
         for name in ("index.html", "404.html"):
             page_html, _ = fill((SOURCE / name).read_text(), values, name)
-            write(name, page_html)
+            write(name, responsive_images(page_html, self.images, name))
         robots = (SOURCE / "robots.txt").read_text()
         sitemap = absolute(self.config, None, "sitemap.xml")
         if sitemap:

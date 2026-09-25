@@ -7,7 +7,6 @@
   "nav_parents": "Dla rodziców",
   "nav_privacy": "Prywatność",
   "nav_faq": "Pytania",
-  "cta_short": "Wczesny dostęp",
   "cta_long": "Poproś o wczesny dostęp",
   "hero_eyebrow": "Aplikacja z filmami dla dzieci, zrobiona przez rodziców",
   "hero_title": "Czas przed ekranem, na który dzieci <em>zapracowały</em>.",
@@ -160,5 +159,17 @@
   "cta_mail_subject": "Bucky - wczesny dostęp",
   "cta_small": "Bez newslettera i spamu. Tylko jedna wiadomość, gdy przyjdzie Twoja kolej.",
   "hero_download": "Pobierz na Androida",
-  "nav_download": "Pobierz"
+  "nav_download": "Pobierz",
+  "menu_label": "Menu",
+  "nav_kids": "Dla dzieci",
+  "meter_label": "Jak pełny jest Bucky",
+  "meter_empty": "Pusty: czas na lekcję",
+  "meter_little": "Trochę: kilka minut",
+  "meter_full": "Pełny: starczy na odcinek",
+  "meter_overflowing": "Z górką: bonus",
+  "parents_shots_label": "Ekrany trybu rodzica z aplikacji",
+  "cap_add": "Dodaj kanał, zobacz ostrzeżenia",
+  "cap_settings": "Ustawienia każdego dziecka",
+  "cap_parent": "Tryb rodzica",
+  "alt_shot_parent": "Ekran główny trybu rodzica: dwoje dzieci z ich lekcjami i przyciski do dodawania filmów, przeglądania ostrzeżeń i zmiany PIN-u"
 }

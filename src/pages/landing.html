@@ -2,30 +2,43 @@
 <html lang="{{lang}}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{{meta_title}}</title>
   <meta name="description" content="{{meta_description}}">
 {{> head}}
 </head>
-<body>
+<body class="has-dock">
   <a class="skip" href="#main">{{skip_to_content}}</a>
 
   <header class="site-header" data-header>
     <div class="wrap header-row">
       <a class="brand" href="{{home_href}}" aria-label="{{brand_home}}">
-        <img src="{{root}}static/img/logo.webp" alt="Bucky" width="400" height="164">
+        <img src="{{root}}static/img/logo.webp" sizes="120px" alt="Bucky">
       </a>
-      <nav class="nav" aria-label="{{nav_label}}">
+      <nav class="nav-desktop" aria-label="{{nav_label}}">
         <a href="#how">{{nav_how}}</a>
         <a href="#lessons">{{nav_lessons}}</a>
         <a href="#parents">{{nav_parents}}</a>
         <a href="#privacy">{{nav_privacy}}</a>
         <a href="#faq">{{nav_faq}}</a>
-        <a href="{{href_download}}">{{nav_download}}</a>
       </nav>
       <div class="header-actions">
         {{language_menu}}
-        <a class="btn btn-primary btn-small" href="#early-access">{{cta_short}}</a>
+        <a class="btn btn-primary btn-small header-cta" href="{{href_download}}">{{nav_download}}</a>
+        <details class="menu" data-menu>
+          <summary aria-label="{{menu_label}}">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+          </summary>
+          <nav class="menu-panel" aria-label="{{nav_label}}">
+            <a href="#how">{{nav_how}}</a>
+            <a href="#lessons">{{nav_lessons}}</a>
+            <a href="#kids">{{nav_kids}}</a>
+            <a href="#parents">{{nav_parents}}</a>
+            <a href="#privacy">{{nav_privacy}}</a>
+            <a href="#faq">{{nav_faq}}</a>
+            <a class="btn btn-primary" href="{{href_download}}">{{hero_download}}</a>
+          </nav>
+        </details>
       </div>
     </div>
   </header>
@@ -39,38 +52,41 @@
           <p class="eyebrow">{{hero_eyebrow}}</p>
           <h1>{{hero_title}}</h1>
           <p class="lead">{{hero_lead}}</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="{{href_download}}">{{hero_download}}</a>
+          <div class="hero-actions" data-hero-actions>
+            <a class="btn btn-primary btn-big" href="{{href_download}}">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
+              {{hero_download}}
+            </a>
             <a class="btn btn-ghost" href="#how">{{hero_secondary}}</a>
           </div>
-          <ul class="facts" aria-label="{{facts_label}}">
-            <li>{{fact_platforms}}</li>
-            <li>{{fact_languages}}</li>
-            <li>{{fact_no_ads}}</li>
-            <li>{{fact_no_account}}</li>
-          </ul>
         </div>
-        <div class="hero-art">
+        <div class="hero-stage">
           <div class="bubble" aria-hidden="true">{{hero_bubble}}</div>
-          <img class="hero-bucky" src="{{root}}static/img/bucky.webp" alt="{{alt_bucky}}" width="560" height="602" fetchpriority="high">
-          <img class="float-pal p1" src="{{root}}static/img/pal.webp" alt="" width="160" height="158">
-          <img class="float-pal p2" src="{{root}}static/img/pal.webp" alt="" width="160" height="158">
-          <img class="float-pal p3" src="{{root}}static/img/pal.webp" alt="" width="160" height="158">
+          <img class="hero-bucky" src="{{root}}static/img/bucky.webp" sizes="(min-width: 900px) 280px, 50vw" alt="{{alt_bucky}}" fetchpriority="high">
+          <img class="float-pal p1" src="{{root}}static/img/pal.webp" sizes="56px" alt="">
+          <img class="float-pal p2" src="{{root}}static/img/pal-wink.webp" sizes="48px" alt="">
+          <img class="float-pal p3" src="{{root}}static/img/pal.webp" sizes="40px" alt="">
           <figure class="phone hero-phone">
-            <img src="{{root}}static/img/shots/{{lang}}/who-is-playing.webp" alt="{{alt_shot_who}}" width="440" height="956">
+            <img src="{{root}}static/img/shots/{{lang}}/who-is-playing.webp" sizes="(min-width: 900px) 260px, 52vw" alt="{{alt_shot_who}}">
           </figure>
         </div>
+        <ul class="facts" aria-label="{{facts_label}}">
+          <li><img src="{{root}}static/img/pal.webp" sizes="28px" alt="">{{fact_platforms}}</li>
+          <li><img src="{{root}}static/img/pal-wink.webp" sizes="28px" alt="">{{fact_languages}}</li>
+          <li><img src="{{root}}static/img/pal-sleepy.webp" sizes="28px" alt="">{{fact_no_ads}}</li>
+          <li><img src="{{root}}static/img/pal-pop.webp" sizes="28px" alt="">{{fact_no_account}}</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Promise strip -->
+    <!-- Promises -->
     <section class="promise" aria-label="{{promise_label}}">
       <div class="wrap">
-        <div class="promise-grid">
-          <div><strong>{{promise1_title}}</strong><span>{{promise1_text}}</span></div>
-          <div><strong>{{promise2_title}}</strong><span>{{promise2_text}}</span></div>
-          <div><strong>{{promise3_title}}</strong><span>{{promise3_text}}</span></div>
-        </div>
+        <ul class="rail promise-rail">
+          <li class="card promise-card"><img src="{{root}}static/img/bucky-happy.webp" sizes="96px" alt="" loading="lazy"><strong>{{promise1_title}}</strong><span>{{promise1_text}}</span></li>
+          <li class="card promise-card"><img src="{{root}}static/img/fill-full.webp" sizes="96px" alt="" loading="lazy"><strong>{{promise2_title}}</strong><span>{{promise2_text}}</span></li>
+          <li class="card promise-card"><img src="{{root}}static/img/bucky-proud.webp" sizes="96px" alt="" loading="lazy"><strong>{{promise3_title}}</strong><span>{{promise3_text}}</span></li>
+        </ul>
       </div>
     </section>
 
@@ -82,28 +98,34 @@
           <h2>{{how_title}}</h2>
           <p>{{how_lead}}</p>
         </header>
-        <ol class="steps">
-          <li class="step">
+        <ol class="meter" aria-label="{{meter_label}}">
+          <li><img src="{{root}}static/img/fill-empty.webp" sizes="(min-width: 900px) 120px, 22vw" alt="" loading="lazy"><span>{{meter_empty}}</span></li>
+          <li><img src="{{root}}static/img/fill-little.webp" sizes="(min-width: 900px) 120px, 22vw" alt="" loading="lazy"><span>{{meter_little}}</span></li>
+          <li><img src="{{root}}static/img/fill-full.webp" sizes="(min-width: 900px) 120px, 22vw" alt="" loading="lazy"><span>{{meter_full}}</span></li>
+          <li><img src="{{root}}static/img/fill-overflowing.webp" sizes="(min-width: 900px) 120px, 22vw" alt="" loading="lazy"><span>{{meter_overflowing}}</span></li>
+        </ol>
+        <ol class="rail steps">
+          <li class="card step">
             <span class="step-num" aria-hidden="true">1</span>
-            <img src="{{root}}static/img/lesson-addition.webp" alt="" width="480" height="480" loading="lazy">
+            <img src="{{root}}static/img/lesson-addition.webp" sizes="(min-width: 900px) 340px, 78vw" alt="" loading="lazy">
             <h3>{{how1_title}}</h3>
             <p>{{how1_text}}</p>
           </li>
-          <li class="step">
+          <li class="card step">
             <span class="step-num" aria-hidden="true">2</span>
-            <img class="step-pal" src="{{root}}static/img/bucky-excited.webp" alt="" width="320" height="276" loading="lazy">
+            <img class="step-art" src="{{root}}static/img/bucky-excited.webp" sizes="(min-width: 900px) 240px, 56vw" alt="" loading="lazy">
             <h3>{{how2_title}}</h3>
             <p>{{how2_text}}</p>
           </li>
-          <li class="step">
+          <li class="card step">
             <span class="step-num" aria-hidden="true">3</span>
-            <img src="{{root}}static/img/cinema.webp" alt="" width="480" height="480" loading="lazy">
+            <img src="{{root}}static/img/cinema.webp" sizes="(min-width: 900px) 340px, 78vw" alt="" loading="lazy">
             <h3>{{how3_title}}</h3>
             <p>{{how3_text}}</p>
           </li>
         </ol>
-        <div class="loop-note">
-          <img src="{{root}}static/img/bucky-empty.webp" alt="" width="480" height="480" loading="lazy">
+        <div class="card loop-note">
+          <img src="{{root}}static/img/fill-empty.webp" sizes="88px" alt="" loading="lazy">
           <p>{{how_loop}}</p>
         </div>
       </div>
@@ -117,42 +139,30 @@
           <h2>{{lessons_title}}</h2>
           <p>{{lessons_lead}}</p>
         </header>
-        <div class="lesson-grid">
-          <article class="lesson">
-            <img src="{{root}}static/img/lesson-addition.webp" alt="" width="480" height="480" loading="lazy">
-            <div>
-              <h3>{{lesson_add_title}}</h3>
-              <p>{{lesson_add_text}}</p>
-            </div>
-          </article>
-          <article class="lesson">
-            <img src="{{root}}static/img/lesson-multiplication.webp" alt="" width="480" height="480" loading="lazy">
-            <div>
-              <h3>{{lesson_mul_title}}</h3>
-              <p>{{lesson_mul_text}}</p>
-            </div>
-          </article>
-          <article class="lesson">
-            <img src="{{root}}static/img/lesson-dictation.webp" alt="" width="480" height="480" loading="lazy">
-            <div>
-              <h3>{{lesson_dict_title}}</h3>
-              <p>{{lesson_dict_text}}</p>
-            </div>
-          </article>
-          <article class="lesson lesson-soon">
-            <img src="{{root}}static/img/bucky-thinking.webp" alt="" width="320" height="276" loading="lazy">
-            <div>
-              <h3>{{lesson_sub_title}} <span class="tag">{{coming_soon}}</span></h3>
-              <p>{{lesson_sub_text}}</p>
-            </div>
-          </article>
-        </div>
-        <div class="shots" role="list" aria-label="{{lessons_shots_label}}">
-          <figure class="phone phone-crop" role="listitem"><img src="{{root}}static/img/shots/{{lang}}/lesson-addition-with-counters.webp" alt="{{alt_shot_addition}}" width="440" height="956" loading="lazy"><figcaption>{{cap_addition}}</figcaption></figure>
-          <figure class="phone phone-crop" role="listitem"><img src="{{root}}static/img/shots/{{lang}}/lesson-split-method.webp" alt="{{alt_shot_split}}" width="440" height="956" loading="lazy"><figcaption>{{cap_split}}</figcaption></figure>
-          <figure class="phone phone-crop" role="listitem"><img src="{{root}}static/img/shots/{{lang}}/lesson-times-table.webp" alt="{{alt_shot_times}}" width="440" height="956" loading="lazy"><figcaption>{{cap_times}}</figcaption></figure>
-          <figure class="phone phone-crop" role="listitem"><img src="{{root}}static/img/shots/{{lang}}/lesson-polish-dictation.webp" alt="{{alt_shot_dictation}}" width="440" height="956" loading="lazy"><figcaption>{{cap_dictation}}</figcaption></figure>
-        </div>
+        <ul class="rail lessons">
+          <li class="card lesson">
+            <img src="{{root}}static/img/lesson-addition.webp" sizes="(min-width: 1100px) 260px, (min-width: 600px) 45vw, 74vw" alt="" loading="lazy">
+            <div><h3>{{lesson_add_title}}</h3><p>{{lesson_add_text}}</p></div>
+          </li>
+          <li class="card lesson">
+            <img src="{{root}}static/img/lesson-multiplication.webp" sizes="(min-width: 1100px) 260px, (min-width: 600px) 45vw, 74vw" alt="" loading="lazy">
+            <div><h3>{{lesson_mul_title}}</h3><p>{{lesson_mul_text}}</p></div>
+          </li>
+          <li class="card lesson">
+            <img src="{{root}}static/img/lesson-dictation.webp" sizes="(min-width: 1100px) 260px, (min-width: 600px) 45vw, 74vw" alt="" loading="lazy">
+            <div><h3>{{lesson_dict_title}}</h3><p>{{lesson_dict_text}}</p></div>
+          </li>
+          <li class="card lesson lesson-soon">
+            <img src="{{root}}static/img/bucky-thinking.webp" sizes="(min-width: 1100px) 200px, (min-width: 600px) 30vw, 50vw" alt="" loading="lazy">
+            <div><h3>{{lesson_sub_title}} <span class="tag">{{coming_soon}}</span></h3><p>{{lesson_sub_text}}</p></div>
+          </li>
+        </ul>
+        <ul class="rail shots" aria-label="{{lessons_shots_label}}">
+          <li><figure class="phone"><img src="{{root}}static/img/shots/{{lang}}/lesson-addition-with-counters.webp" sizes="(min-width: 900px) 220px, 58vw" alt="{{alt_shot_addition}}" loading="lazy"></figure><p class="caption">{{cap_addition}}</p></li>
+          <li><figure class="phone"><img src="{{root}}static/img/shots/{{lang}}/lesson-split-method.webp" sizes="(min-width: 900px) 220px, 58vw" alt="{{alt_shot_split}}" loading="lazy"></figure><p class="caption">{{cap_split}}</p></li>
+          <li><figure class="phone"><img src="{{root}}static/img/shots/{{lang}}/lesson-times-table.webp" sizes="(min-width: 900px) 220px, 58vw" alt="{{alt_shot_times}}" loading="lazy"></figure><p class="caption">{{cap_times}}</p></li>
+          <li><figure class="phone"><img src="{{root}}static/img/shots/{{lang}}/lesson-polish-dictation.webp" sizes="(min-width: 900px) 220px, 58vw" alt="{{alt_shot_dictation}}" loading="lazy"></figure><p class="caption">{{cap_dictation}}</p></li>
+        </ul>
       </div>
     </section>
 
@@ -165,38 +175,27 @@
           <p>{{kids_lead}}</p>
         </header>
         <ul class="faces" aria-label="{{faces_label}}">
-          <li><img src="{{root}}static/img/bucky-happy.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_happy}}</span></li>
-          <li><img src="{{root}}static/img/bucky-thinking.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_thinking}}</span></li>
-          <li><img src="{{root}}static/img/bucky-oops.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_oops}}</span></li>
-          <li><img src="{{root}}static/img/bucky-excited.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_excited}}</span></li>
-          <li><img src="{{root}}static/img/bucky-celebrating.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_celebrating}}</span></li>
-          <li><img src="{{root}}static/img/bucky-sleepy.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_sleepy}}</span></li>
+          <li><img src="{{root}}static/img/bucky-happy.webp" sizes="(min-width: 900px) 140px, 28vw" alt="" loading="lazy"><span>{{face_happy}}</span></li>
+          <li><img src="{{root}}static/img/bucky-thinking.webp" sizes="(min-width: 900px) 140px, 28vw" alt="" loading="lazy"><span>{{face_thinking}}</span></li>
+          <li><img src="{{root}}static/img/bucky-oops.webp" sizes="(min-width: 900px) 140px, 28vw" alt="" loading="lazy"><span>{{face_oops}}</span></li>
+          <li><img src="{{root}}static/img/bucky-excited.webp" sizes="(min-width: 900px) 140px, 28vw" alt="" loading="lazy"><span>{{face_excited}}</span></li>
+          <li><img src="{{root}}static/img/bucky-celebrating.webp" sizes="(min-width: 900px) 140px, 28vw" alt="" loading="lazy"><span>{{face_celebrating}}</span></li>
+          <li><img src="{{root}}static/img/bucky-sleepy.webp" sizes="(min-width: 900px) 140px, 28vw" alt="" loading="lazy"><span>{{face_sleepy}}</span></li>
         </ul>
-        <div class="split">
-          <div class="feature-list">
-            <div class="feature">
-              <h3>{{kids1_title}}</h3>
-              <p>{{kids1_text}}</p>
-            </div>
-            <div class="feature">
-              <h3>{{kids2_title}}</h3>
-              <p>{{kids2_text}}</p>
-            </div>
-            <div class="feature">
-              <h3>{{kids3_title}}</h3>
-              <p>{{kids3_text}}</p>
-            </div>
-            <div class="feature">
-              <h3>{{kids4_title}}</h3>
-              <p>{{kids4_text}}</p>
-            </div>
-          </div>
-          <div class="bank-card">
-            <img src="{{root}}static/img/bank.webp" alt="{{alt_bank}}" width="480" height="480" loading="lazy">
-            <figure class="phone phone-tilt phone-crop">
-              <img src="{{root}}static/img/shots/{{lang}}/bank-after-a-day-of-interest.webp" alt="{{alt_shot_bank}}" width="440" height="956" loading="lazy">
+        <div class="kids-grid">
+          <div class="bank-stage">
+            <img class="bank-art" src="{{root}}static/img/bank.webp" sizes="(min-width: 900px) 320px, 70vw" alt="{{alt_bank}}" loading="lazy">
+            <figure class="phone bank-phone">
+              <img src="{{root}}static/img/shots/{{lang}}/bank-after-a-day-of-interest.webp" sizes="(min-width: 900px) 200px, 42vw" alt="{{alt_shot_bank}}" loading="lazy">
             </figure>
+            <img class="float-pal p4" src="{{root}}static/img/pal-pop.webp" sizes="64px" alt="" loading="lazy">
           </div>
+          <ul class="features">
+            <li class="card feature"><img src="{{root}}static/img/fill-little.webp" sizes="64px" alt="" loading="lazy"><div><h3>{{kids1_title}}</h3><p>{{kids1_text}}</p></div></li>
+            <li class="card feature"><img src="{{root}}static/img/bank-building.webp" sizes="64px" alt="" loading="lazy"><div><h3>{{kids2_title}}</h3><p>{{kids2_text}}</p></div></li>
+            <li class="card feature"><img src="{{root}}static/img/pal-pop.webp" sizes="64px" alt="" loading="lazy"><div><h3>{{kids3_title}}</h3><p>{{kids3_text}}</p></div></li>
+            <li class="card feature"><img src="{{root}}static/img/pal-wink.webp" sizes="64px" alt="" loading="lazy"><div><h3>{{kids4_title}}</h3><p>{{kids4_text}}</p></div></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -209,10 +208,7 @@
           <h2>{{parents_title}}</h2>
           <p>{{parents_lead}}</p>
         </header>
-        <div class="parents-top">
-          <figure class="phone phone-crop">
-            <img src="{{root}}static/img/shots/{{lang}}/add-videos-channel-with-warnings.webp" alt="{{alt_shot_add}}" width="440" height="956" loading="lazy">
-          </figure>
+        <div class="parents-grid">
           <div class="parents-copy">
             <h3>{{approve_title}}</h3>
             <p>{{approve_text}}</p>
@@ -227,51 +223,55 @@
               <li>{{flag_sponsored}}</li>
             </ul>
           </div>
-          <figure class="phone phone-crop">
-            <img src="{{root}}static/img/shots/{{lang}}/kid-settings-addition.webp" alt="{{alt_shot_settings}}" width="440" height="956" loading="lazy">
-          </figure>
+          <ul class="rail shots parent-shots" aria-label="{{parents_shots_label}}">
+            <li><figure class="phone"><img src="{{root}}static/img/shots/{{lang}}/add-videos-channel-with-warnings.webp" sizes="(min-width: 900px) 220px, 58vw" alt="{{alt_shot_add}}" loading="lazy"></figure><p class="caption">{{cap_add}}</p></li>
+            <li><figure class="phone"><img src="{{root}}static/img/shots/{{lang}}/kid-settings-addition.webp" sizes="(min-width: 900px) 220px, 58vw" alt="{{alt_shot_settings}}" loading="lazy"></figure><p class="caption">{{cap_settings}}</p></li>
+            <li><figure class="phone"><img src="{{root}}static/img/shots/{{lang}}/parent-home.webp" sizes="(min-width: 900px) 220px, 58vw" alt="{{alt_shot_parent}}" loading="lazy"></figure><p class="caption">{{cap_parent}}</p></li>
+          </ul>
         </div>
         <ul class="grid-features">
-          <li>
+          <li class="card">
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
             <h3>{{p_pin_title}}</h3><p>{{p_pin_text}}</p>
           </li>
-          <li>
+          <li class="card">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M7 16V9"/><path d="M12 16V5"/><path d="M17 16v-4"/></svg>
             <h3>{{p_stats_title}}</h3><p>{{p_stats_text}}</p>
           </li>
-          <li>
+          <li class="card">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l3 2"/><path d="M9 3h6"/></svg>
             <h3>{{p_breaks_title}}</h3><p>{{p_breaks_text}}</p>
           </li>
-          <li>
+          <li class="card">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>
             <h3>{{p_price_title}}</h3><p>{{p_price_text}}</p>
           </li>
-          <li>
+          <li class="card">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 19a5 5 0 0 1 10 0"/><path d="M11 19a5 5 0 0 1 10 0"/></svg>
             <h3>{{p_family_title}}</h3><p>{{p_family_text}}</p>
           </li>
-          <li>
+          <li class="card">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg>
             <h3>{{p_sync_title}}</h3><p>{{p_sync_text}}</p>
           </li>
-          <li>
+          <li class="card">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.6"/><path d="M8.2 13.2l7.6 4.6"/></svg>
             <h3>{{p_share_title}}</h3><p>{{p_share_text}}</p>
           </li>
-          <li>
+          <li class="card">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg>
             <h3>{{p_assign_title}}</h3><p>{{p_assign_text}}</p>
           </li>
         </ul>
         <div class="cinema">
-          <img src="{{root}}static/img/cinema-closed.webp" alt="{{alt_cinema}}" width="480" height="480" loading="lazy">
+          <div class="cinema-art">
+            <img src="{{root}}static/img/cinema-closed.webp" sizes="(min-width: 900px) 220px, 44vw" alt="{{alt_cinema}}" loading="lazy">
+            <img src="{{root}}static/img/bucky-break.webp" sizes="(min-width: 900px) 160px, 34vw" alt="{{alt_break}}" loading="lazy">
+          </div>
           <div>
             <h3>{{cinema_title}}</h3>
             <p>{{cinema_text}}</p>
           </div>
-          <img src="{{root}}static/img/bucky-break.webp" alt="{{alt_break}}" width="480" height="480" loading="lazy">
         </div>
       </div>
     </section>
@@ -280,12 +280,13 @@
     <section class="section" id="privacy">
       <div class="wrap">
         <header class="section-head">
+          <img class="head-art" src="{{root}}static/img/pal-sleepy.webp" sizes="96px" alt="" loading="lazy">
           <p class="eyebrow">{{privacy_eyebrow}}</p>
           <h2>{{privacy_title}}</h2>
           <p>{{privacy_lead}}</p>
         </header>
         <div class="privacy-grid">
-          <div class="privacy-card stored">
+          <div class="card privacy-card stored">
             <h3>{{stored_title}}</h3>
             <p class="small">{{stored_intro}}</p>
             <ul>
@@ -296,7 +297,7 @@
               <li>{{stored_5}}</li>
             </ul>
           </div>
-          <div class="privacy-card never">
+          <div class="card privacy-card never">
             <h3>{{never_title}}</h3>
             <p class="small">{{never_intro}}</p>
             <ul>
@@ -320,6 +321,7 @@
     <section class="section band band-cream" id="faq">
       <div class="wrap faq-wrap">
         <header class="section-head">
+          <img class="head-art" src="{{root}}static/img/bucky-thinking.webp" sizes="104px" alt="" loading="lazy">
           <p class="eyebrow">{{faq_eyebrow}}</p>
           <h2>{{faq_title}}</h2>
         </header>
@@ -340,7 +342,7 @@
     <section class="section" id="early-access">
       <div class="wrap">
         <div class="cta">
-          <img src="{{root}}static/img/bucky-celebrating.webp" alt="" width="320" height="276" loading="lazy">
+          <img src="{{root}}static/img/bucky-celebrating.webp" sizes="(min-width: 700px) 240px, 180px" alt="" loading="lazy">
           <div>
             <h2>{{cta_title}}</h2>
             <p>{{cta_text}}</p>
@@ -354,5 +356,12 @@
   </main>
 
 {{> footer}}
+
+  <div class="dock" data-dock>
+    <a class="btn btn-primary btn-big" href="{{href_download}}">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
+      {{hero_download}}
+    </a>
+  </div>
 </body>
 </html>

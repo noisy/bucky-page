@@ -19,5 +19,6 @@
   "step4_title": "Zainstaluj i otwórz.",
   "step4_text": "Stuknij Zainstaluj, a potem Otwórz. Przy pierwszym wejściu do trybu rodzica ustawisz PIN.",
   "warning_note": "Android ostrzeże, że aplikacja nie pochodzi ze Sklepu Play. To normalne: Bucky'ego jeszcze nie ma w sklepie. Jeśli zapyta Play Protect, wybierz \"Więcej szczegółów\", a potem \"Zainstaluj mimo to\".",
-  "update_note": "Aby zaktualizować, pobierz najnowszy plik z tej strony i zainstaluj go na starą wersję. Popcorny, dzieci i ustawienia zostają bez zmian."
+  "update_note": "Aby zaktualizować, pobierz najnowszy plik z tej strony i zainstaluj go na starą wersję. Popcorny, dzieci i ustawienia zostają bez zmian.",
+  "back_home": "Więcej o Buckym"
 }

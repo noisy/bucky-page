@@ -2,7 +2,7 @@
 <html lang="{{lang}}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{{meta_title}}</title>
   <meta name="description" content="{{meta_description}}">
 {{> head}}
@@ -13,9 +13,9 @@
   <header class="site-header" data-header>
     <div class="wrap header-row">
       <a class="brand" href="{{home_href}}" aria-label="{{brand_home}}">
-        <img src="{{root}}static/img/logo.webp" alt="Bucky" width="400" height="164">
+        <img src="{{root}}static/img/logo.webp" sizes="120px" alt="Bucky">
       </a>
-      <div class="header-actions end">
+      <div class="header-actions">
         {{language_menu}}
       </div>
     </div>
@@ -23,31 +23,38 @@
 
   <main id="main" class="download">
     <section class="wrap download-hero">
-      <img class="download-bucky" src="{{root}}static/img/bucky.webp" alt="{{alt_bucky}}" width="560" height="602" fetchpriority="high">
-      <div>
+      <div class="download-title">
+        <img class="download-bucky" src="{{root}}static/img/bucky.webp" sizes="(min-width: 900px) 300px, 108px" alt="{{alt_bucky}}" fetchpriority="high">
         <h1>{{title}}</h1>
-        <p class="lead">{{intro}}</p>
-        <div class="download-actions">
-          <a class="btn btn-primary btn-big" href="{{apk_href}}" download>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
-            {{download_button}}
-          </a>
-          <p class="small">{{version_label}} {{apk_version}}, {{requirements}}</p>
-        </div>
-        <p class="ios-note"><strong>{{ios_title}}</strong> {{ios_text}}</p>
       </div>
+      <div class="download-actions">
+        <a class="btn btn-primary btn-big" href="{{apk_href}}" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
+          {{download_button}}
+        </a>
+        <p class="small">{{version_label}} {{apk_version}}, {{requirements}}</p>
+      </div>
+      <p class="lead download-intro">{{intro}}</p>
+      <p class="card ios-note"><img src="{{root}}static/img/pal-sleepy.webp" sizes="44px" alt=""><span><strong>{{ios_title}}</strong> {{ios_text}}</span></p>
     </section>
 
     <section class="wrap install" aria-labelledby="install-title">
       <h2 id="install-title">{{install_title}}</h2>
       <ol class="install-steps">
-        <li><strong>{{step1_title}}</strong> {{step1_text}}</li>
-        <li><strong>{{step2_title}}</strong> {{step2_text}}</li>
-        <li><strong>{{step3_title}}</strong> {{step3_text}}</li>
-        <li><strong>{{step4_title}}</strong> {{step4_text}}</li>
+        <li class="card"><strong>{{step1_title}}</strong> {{step1_text}}</li>
+        <li class="card"><strong>{{step2_title}}</strong> {{step2_text}}</li>
+        <li class="card"><strong>{{step3_title}}</strong> {{step3_text}}</li>
+        <li class="card"><strong>{{step4_title}}</strong> {{step4_text}}</li>
       </ol>
-      <p class="install-note">{{warning_note}}</p>
-      <p class="install-note">{{update_note}}</p>
+      <div class="card install-note">
+        <img src="{{root}}static/img/bucky-oops.webp" sizes="72px" alt="" loading="lazy">
+        <p>{{warning_note}}</p>
+      </div>
+      <div class="card install-note">
+        <img src="{{root}}static/img/fill-overflowing.webp" sizes="72px" alt="" loading="lazy">
+        <p>{{update_note}}</p>
+      </div>
+      <p class="back"><a class="btn btn-ghost" href="{{home_href}}">{{back_home}}</a></p>
     </section>
   </main>
 

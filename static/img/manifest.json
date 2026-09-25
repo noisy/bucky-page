@@ -1,0 +1,354 @@
+{
+ "bank": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "bank-building": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "bucky": {
+  "ratio": 1.075,
+  "widths": [
+   320,
+   480,
+   720
+  ]
+ },
+ "bucky-break": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "bucky-celebrating": {
+  "ratio": 0.9865,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "bucky-empty": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "bucky-excited": {
+  "ratio": 1.1018,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "bucky-happy": {
+  "ratio": 1.1527,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "bucky-oops": {
+  "ratio": 1.1419,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "bucky-proud": {
+  "ratio": 1.1616,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "bucky-sleepy": {
+  "ratio": 1.1007,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "bucky-surprised": {
+  "ratio": 1.1527,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "bucky-thinking": {
+  "ratio": 1.1502,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "cinema": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "cinema-closed": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "fill-empty": {
+  "ratio": 1.0642,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "fill-full": {
+  "ratio": 1.2457,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "fill-little": {
+  "ratio": 1.1045,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "fill-overflowing": {
+  "ratio": 1.2461,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "lesson-addition": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "lesson-dictation": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "lesson-multiplication": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "logo": {
+  "ratio": 0.4092,
+  "widths": [
+   200,
+   400
+  ]
+ },
+ "pal": {
+  "ratio": 0.99,
+  "widths": [
+   96,
+   192
+  ]
+ },
+ "pal-pop": {
+  "ratio": 0.8014,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "pal-sleepy": {
+  "ratio": 1.0,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "pal-wink": {
+  "ratio": 1.0031,
+  "widths": [
+   160,
+   320
+  ]
+ },
+ "shots/en/add-videos-channel-with-warnings": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/en/bank-after-a-day-of-interest": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/en/kid-settings-addition": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/en/lesson-addition-with-counters": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/en/lesson-polish-dictation": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/en/lesson-split-method": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/en/lesson-times-table": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/en/parent-home": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/en/who-is-playing": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/add-videos-channel-with-warnings": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/bank-after-a-day-of-interest": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/kid-settings-addition": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/lesson-addition-with-counters": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/lesson-polish-dictation": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/lesson-split-method": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/lesson-times-table": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/parent-home": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ },
+ "shots/pl/who-is-playing": {
+  "ratio": 2.1727,
+  "widths": [
+   280,
+   460,
+   660
+  ]
+ }
+}

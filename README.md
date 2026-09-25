@@ -49,11 +49,11 @@ key.
 | `downloads/` | How to ship an APK (the file itself lives in releases) |
 | `src/index.html` | Root page: picks the language (see Languages), with plain links as a fallback |
 | `src/404.html`, `src/robots.txt` | Site-root files; the build adds `CNAME`, `.nojekyll` and `sitemap.xml` |
-| `static/css/site.css` | All styling. Brand tokens from `branding/palette/colors.json`, light and dark (`prefers-color-scheme`) |
-| `static/js/site.js` | Remembers the language picked in the switcher; header hairline on scroll. The page works without it |
+| `static/css/site.css` | All styling, mobile first: base rules for 360-430px phones, `min-width` queries add tablet (600px), laptop (900px) and wide (1100px). Brand tokens from the app palette, light and dark (`prefers-color-scheme`) |
+| `static/js/site.js` | Remembers the language picked in the switcher, closes the menus, hides the phone download dock while the hero button is on screen. The page works without it |
 | `static/fonts/` | Fredoka and Nunito (SIL OFL), subset to Latin and Polish letters as woff2 |
 | `static/img/` | Optimised WebP artwork and app screenshots (generated, see below) |
-| `tools/prepare_images.py` | Regenerates `static/img/` from `assets/images/`, `branding/` and the screenshot tests |
+| `tools/prepare_images.py` | Regenerates `static/img/` (all widths and the manifest) from the app repo art and screenshots |
 
 ### Languages
 
@@ -94,13 +94,24 @@ https://bucky.club (GoDaddy), and bucky.pl lands on https://bucky.club/pl/
 
 ### Images and screenshots
 
-The app screenshots are the real screens, rendered by the golden tests
-(not committed). To refresh them:
+Every picture is committed in a few widths (`static/img/<name>-<width>.webp`,
+listed in `static/img/manifest.json`). Templates reference it without a
+width, `<img src="{{root}}static/img/bank.webp" sizes="...">`, and the build
+fills in `src`, `srcset`, `width` and `height`, so phones download small
+files. An `<img>` of a generated picture without `sizes` fails the build.
+
+The pictures come from the app repo: `assets/images/`, the character sheets
+in `branding/mascot/` (expressions, fill states and Pals are cut out of
+them) and the app screenshots rendered by its golden tests (not committed).
+To refresh them, in an app checkout:
 
 ```sh
 flutter test --tags screenshots --update-goldens test/components/screen_screenshots_test.dart
-python3 website/tools/prepare_images.py   # needs Pillow
+BUCKY_APP_DIR=<app checkout> python3 tools/prepare_images.py   # needs Pillow
 ```
+
+(`BUCKY_APP_DIR` defaults to the parent folder, which is right when this repo
+is the app's `website/` submodule.)
 
 Only screens with the made-up kid names (Little Popper, Big Popper) are
 used. Collection covers of third-party cartoons are deliberately not on
