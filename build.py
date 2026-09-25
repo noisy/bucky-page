@@ -67,7 +67,12 @@ def page_path(pages: list[str], page: str, language: str) -> str:
 
 
 def relative(from_path: str, to_path: str) -> str:
-    """Relative link between two root-relative paths, so the site works from any folder."""
+    """Relative link between two root-relative paths, so the site works from any folder.
+
+    Absolute URLs (such as a GitHub release asset) are returned unchanged.
+    """
+    if "://" in to_path:
+        return to_path
     return "../" * from_path.count("/") + to_path
 
 

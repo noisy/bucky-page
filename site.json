@@ -1,6 +1,12 @@
 {
-  "pages": ["landing", "download"],
-  "languages": ["en", "pl"],
+  "pages": [
+    "landing",
+    "download"
+  ],
+  "languages": [
+    "en",
+    "pl"
+  ],
   "default_language": "en",
   "site_url": "https://bucky.pl",
   "language_site_urls": {},
@@ -10,7 +16,7 @@
   },
   "cname": "bucky.pl",
   "apk": {
-    "path": "downloads/bucky-latest.apk",
+    "path": "https://github.com/noisy/bucky-page/releases/latest/download/bucky-latest.apk",
     "version": "0.0.0"
   }
 }
