@@ -10,7 +10,7 @@
   "cta_long": "Poproś o wczesny dostęp",
   "hero_eyebrow": "Aplikacja z filmami dla dzieci, zrobiona przez rodziców",
   "hero_title": "Czas przed ekranem, na który dzieci <em>zapracowały</em>.",
-  "hero_lead": "Dzieci zdobywają czas przed ekranem w krótkich lekcjach. Ty zatwierdzasz każdy film.",
+  "hero_lead": "Dzieci zdobywają filmy w krótkich, wesołych lekcjach.",
   "hero_secondary": "Zobacz, jak to działa",
   "hero_bubble": "Napełnijmy mnie!",
   "alt_bucky": "Bucky, uśmiechnięty różowo-miętowy kubełek popcornu, a wokół niego trzy małe ziarenka popcornu",
@@ -166,5 +166,6 @@
   "benefit_lessons": "Matma i ortografia",
   "benefit_no_autoplay": "Nic nie włącza się samo",
   "benefit_no_account": "Bez zakładania konta",
-  "benefit_languages": "Po polsku i po angielsku"
+  "benefit_languages": "Po polsku i po angielsku",
+  "how_summary": "Dzieci oglądają tylko filmy zatwierdzone przez Ciebie. Każda minuta kosztuje kilka popcornów, a popcorny zdobywa się w krótkich, przyjaznych lekcjach: dodawanie, tabliczka mnożenia i dyktando. Bez negocjacji i bez łez, kiedy trzeba skończyć."
 }

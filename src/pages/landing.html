@@ -60,6 +60,14 @@
             <a class="btn btn-ghost" href="#how">{{hero_secondary}}</a>
           </div>
         </div>
+        <ul class="benefits" aria-label="{{benefits_label}}">
+          <li><img src="{{root}}static/img/fill-full.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_earned}}</li>
+          <li><img src="{{root}}static/img/bucky-happy.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_approved}}</li>
+          <li><img class="tile-art" src="{{root}}static/img/lesson-addition.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_lessons}}</li>
+          <li><img src="{{root}}static/img/pal-sleepy.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_no_autoplay}}</li>
+          <li><img src="{{root}}static/img/pal-wink.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_no_account}}</li>
+          <li><img src="{{root}}static/img/pal-pop.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_languages}}</li>
+        </ul>
         <div class="hero-stage">
           <div class="bubble" aria-hidden="true">{{hero_bubble}}</div>
           <img class="hero-bucky" src="{{root}}static/img/bucky.webp" sizes="(min-width: 900px) 280px, 50vw" alt="{{alt_bucky}}" fetchpriority="high">
@@ -70,14 +78,6 @@
             <img src="{{root}}static/img/shots/{{lang}}/who-is-playing.webp" sizes="(min-width: 900px) 260px, 52vw" alt="{{alt_shot_who}}">
           </figure>
         </div>
-        <ul class="benefits" aria-label="{{benefits_label}}">
-          <li><img src="{{root}}static/img/fill-full.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_earned}}</li>
-          <li><img src="{{root}}static/img/bucky-happy.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_approved}}</li>
-          <li><img class="tile-art" src="{{root}}static/img/lesson-addition.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_lessons}}</li>
-          <li><img src="{{root}}static/img/pal-sleepy.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_no_autoplay}}</li>
-          <li><img src="{{root}}static/img/pal-wink.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_no_account}}</li>
-          <li><img src="{{root}}static/img/pal-pop.webp" sizes="(min-width: 900px) 64px, 56px" alt="">{{benefit_languages}}</li>
-        </ul>
       </div>
     </section>
 
@@ -87,6 +87,7 @@
         <header class="section-head">
           <p class="eyebrow">{{how_eyebrow}}</p>
           <h2>{{how_title}}</h2>
+          <p class="how-summary">{{how_summary}}</p>
           <p>{{how_lead}}</p>
         </header>
         <ol class="meter" aria-label="{{meter_label}}">

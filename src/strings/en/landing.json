@@ -10,7 +10,7 @@
   "cta_long": "Get early access",
   "hero_eyebrow": "A video app for kids, made by parents",
   "hero_title": "Screen time your kids <em>earn</em>.",
-  "hero_lead": "Kids earn screen time in short lessons. You approve every video.",
+  "hero_lead": "Kids earn their videos with quick, fun lessons.",
   "hero_secondary": "See how it works",
   "hero_bubble": "Let's fill me up!",
   "alt_bucky": "Bucky, a smiling pink and mint popcorn bucket, with three little popcorn kernels floating around him",
@@ -166,5 +166,6 @@
   "benefit_lessons": "Maths and spelling",
   "benefit_no_autoplay": "No autoplay, no tricks",
   "benefit_no_account": "No account needed",
-  "benefit_languages": "English and Polish"
+  "benefit_languages": "English and Polish",
+  "how_summary": "Kids watch only the videos you approved. Every minute costs a few Popcorn Pals, and kids earn Pals in short, friendly lessons: adding, times tables and spelling. No negotiating, no tears when it's over."
 }
