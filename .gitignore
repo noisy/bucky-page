@@ -1,2 +1,3 @@
 dist/
 downloads/*.apk
+.worktree/
