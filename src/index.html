@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bucky - screen time your kids earn</title>
+  <meta name="description" content="A kids video app where watching is earned in short lessons. Czas przed ekranem, na który dzieci zapracowały.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="alternate" hreflang="en" href="en/">
+  <link rel="alternate" hreflang="pl" href="pl/">
+  <link rel="icon" href="static/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="static/css/site.css">
+  <script>
+    // Sends visitors to their saved language, or to Polish when the browser prefers it.
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("bucky-lang"); } catch (e) {}
+      var languages = navigator.languages || [navigator.language || ""];
+      var prefersPolish = languages.some(function (l) { return /^pl\b/i.test(l); });
+      var target = saved === "pl" || saved === "en" ? saved : (prefersPolish ? "pl" : "en");
+      location.replace(target + "/");
+    })();
+  </script>
+</head>
+<body class="chooser">
+  <main class="chooser-card">
+    <img src="static/img/bucky-happy.webp" alt="" width="320" height="276">
+    <h1>Bucky</h1>
+    <ul class="chooser-links">
+      <li><a class="btn btn-primary" href="en/" hreflang="en" lang="en">English</a></li>
+      <li><a class="btn btn-primary" href="pl/" hreflang="pl" lang="pl">Polski</a></li>
+    </ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FEF6E2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#221718" media="(prefers-color-scheme: dark)">
+  <link rel="alternate" hreflang="en" href="../en/">
+  <link rel="alternate" hreflang="pl" href="../pl/">
+  <link rel="alternate" hreflang="x-default" href="../">
+  <!-- TODO: absolute og:url / og:image once the domain is chosen -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{meta_title}}">
+  <meta property="og:description" content="{{meta_description}}">
+  <meta property="og:image" content="../static/img/og.jpg">
+  <meta property="og:locale" content="{{og_locale}}">
+  <link rel="icon" href="../static/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../static/img/apple-touch-icon.png">
+  <link rel="preload" href="../static/fonts/Fredoka-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/fonts/Nunito-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/site.css">
+  <script src="../static/js/site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">{{skip_to_content}}</a>
+
+  <header class="site-header" data-header>
+    <div class="wrap header-row">
+      <a class="brand" href="./" aria-label="{{brand_home}}">
+        <img src="../static/img/logo.webp" alt="Bucky" width="400" height="164">
+      </a>
+      <nav class="nav" aria-label="{{nav_label}}">
+        <a href="#how">{{nav_how}}</a>
+        <a href="#lessons">{{nav_lessons}}</a>
+        <a href="#parents">{{nav_parents}}</a>
+        <a href="#privacy">{{nav_privacy}}</a>
+        <a href="#faq">{{nav_faq}}</a>
+      </nav>
+      <div class="header-actions">
+        <a class="lang" href="../{{other_lang}}/" hreflang="{{other_lang}}" lang="{{other_lang}}" data-lang-switch="{{other_lang}}">
+          <span aria-hidden="true">{{other_lang_short}}</span><span class="sr-only">{{other_lang_name}}</span>
+        </a>
+        <a class="btn btn-primary btn-small" href="#early-access">{{cta_short}}</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">{{hero_eyebrow}}</p>
+          <h1>{{hero_title}}</h1>
+          <p class="lead">{{hero_lead}}</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#early-access">{{cta_long}}</a>
+            <a class="btn btn-ghost" href="#how">{{hero_secondary}}</a>
+          </div>
+          <ul class="facts" aria-label="{{facts_label}}">
+            <li>{{fact_platforms}}</li>
+            <li>{{fact_languages}}</li>
+            <li>{{fact_no_ads}}</li>
+            <li>{{fact_no_account}}</li>
+          </ul>
+        </div>
+        <div class="hero-art">
+          <div class="bubble" aria-hidden="true">{{hero_bubble}}</div>
+          <img class="hero-bucky" src="../static/img/bucky.webp" alt="{{alt_bucky}}" width="560" height="602" fetchpriority="high">
+          <img class="float-pal p1" src="../static/img/pal.webp" alt="" width="160" height="158">
+          <img class="float-pal p2" src="../static/img/pal.webp" alt="" width="160" height="158">
+          <img class="float-pal p3" src="../static/img/pal.webp" alt="" width="160" height="158">
+          <figure class="phone hero-phone">
+            <img src="../static/img/shots/{{lang}}/who-is-playing.webp" alt="{{alt_shot_who}}" width="440" height="956">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promise strip -->
+    <section class="promise" aria-label="{{promise_label}}">
+      <div class="wrap promise-grid">
+        <div><strong>{{promise1_title}}</strong><span>{{promise1_text}}</span></div>
+        <div><strong>{{promise2_title}}</strong><span>{{promise2_text}}</span></div>
+        <div><strong>{{promise3_title}}</strong><span>{{promise3_text}}</span></div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">{{how_eyebrow}}</p>
+          <h2>{{how_title}}</h2>
+          <p>{{how_lead}}</p>
+        </header>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <img src="../static/img/lesson-addition.webp" alt="" width="480" height="480" loading="lazy">
+            <h3>{{how1_title}}</h3>
+            <p>{{how1_text}}</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <img class="step-pal" src="../static/img/bucky-excited.webp" alt="" width="320" height="276" loading="lazy">
+            <h3>{{how2_title}}</h3>
+            <p>{{how2_text}}</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <img src="../static/img/cinema.webp" alt="" width="480" height="480" loading="lazy">
+            <h3>{{how3_title}}</h3>
+            <p>{{how3_text}}</p>
+          </li>
+        </ol>
+        <div class="loop-note">
+          <img src="../static/img/bucky-empty.webp" alt="" width="480" height="480" loading="lazy">
+          <p>{{how_loop}}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lessons -->
+    <section class="section band band-mint" id="lessons">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">{{lessons_eyebrow}}</p>
+          <h2>{{lessons_title}}</h2>
+          <p>{{lessons_lead}}</p>
+        </header>
+        <div class="lesson-grid">
+          <article class="lesson">
+            <img src="../static/img/lesson-addition.webp" alt="" width="480" height="480" loading="lazy">
+            <div>
+              <h3>{{lesson_add_title}}</h3>
+              <p>{{lesson_add_text}}</p>
+            </div>
+          </article>
+          <article class="lesson">
+            <img src="../static/img/lesson-multiplication.webp" alt="" width="480" height="480" loading="lazy">
+            <div>
+              <h3>{{lesson_mul_title}}</h3>
+              <p>{{lesson_mul_text}}</p>
+            </div>
+          </article>
+          <article class="lesson">
+            <img src="../static/img/lesson-dictation.webp" alt="" width="480" height="480" loading="lazy">
+            <div>
+              <h3>{{lesson_dict_title}}</h3>
+              <p>{{lesson_dict_text}}</p>
+            </div>
+          </article>
+          <article class="lesson lesson-soon">
+            <img src="../static/img/bucky-thinking.webp" alt="" width="320" height="276" loading="lazy">
+            <div>
+              <h3>{{lesson_sub_title}} <span class="tag">{{coming_soon}}</span></h3>
+              <p>{{lesson_sub_text}}</p>
+            </div>
+          </article>
+        </div>
+        <div class="shots" role="list" aria-label="{{lessons_shots_label}}">
+          <figure class="phone phone-crop" role="listitem"><img src="../static/img/shots/{{lang}}/lesson-addition-with-counters.webp" alt="{{alt_shot_addition}}" width="440" height="956" loading="lazy"><figcaption>{{cap_addition}}</figcaption></figure>
+          <figure class="phone phone-crop" role="listitem"><img src="../static/img/shots/{{lang}}/lesson-split-method.webp" alt="{{alt_shot_split}}" width="440" height="956" loading="lazy"><figcaption>{{cap_split}}</figcaption></figure>
+          <figure class="phone phone-crop" role="listitem"><img src="../static/img/shots/{{lang}}/lesson-times-table.webp" alt="{{alt_shot_times}}" width="440" height="956" loading="lazy"><figcaption>{{cap_times}}</figcaption></figure>
+          <figure class="phone phone-crop" role="listitem"><img src="../static/img/shots/{{lang}}/lesson-polish-dictation.webp" alt="{{alt_shot_dictation}}" width="440" height="956" loading="lazy"><figcaption>{{cap_dictation}}</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- For kids -->
+    <section class="section" id="kids">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">{{kids_eyebrow}}</p>
+          <h2>{{kids_title}}</h2>
+          <p>{{kids_lead}}</p>
+        </header>
+        <ul class="faces" aria-label="{{faces_label}}">
+          <li><img src="../static/img/bucky-happy.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_happy}}</span></li>
+          <li><img src="../static/img/bucky-thinking.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_thinking}}</span></li>
+          <li><img src="../static/img/bucky-oops.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_oops}}</span></li>
+          <li><img src="../static/img/bucky-excited.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_excited}}</span></li>
+          <li><img src="../static/img/bucky-celebrating.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_celebrating}}</span></li>
+          <li><img src="../static/img/bucky-sleepy.webp" alt="" width="320" height="276" loading="lazy"><span>{{face_sleepy}}</span></li>
+        </ul>
+        <div class="split">
+          <div class="feature-list">
+            <div class="feature">
+              <h3>{{kids1_title}}</h3>
+              <p>{{kids1_text}}</p>
+            </div>
+            <div class="feature">
+              <h3>{{kids2_title}}</h3>
+              <p>{{kids2_text}}</p>
+            </div>
+            <div class="feature">
+              <h3>{{kids3_title}}</h3>
+              <p>{{kids3_text}}</p>
+            </div>
+            <div class="feature">
+              <h3>{{kids4_title}}</h3>
+              <p>{{kids4_text}}</p>
+            </div>
+          </div>
+          <div class="bank-card">
+            <img src="../static/img/bank.webp" alt="{{alt_bank}}" width="480" height="480" loading="lazy">
+            <figure class="phone phone-tilt phone-crop">
+              <img src="../static/img/shots/{{lang}}/bank-after-a-day-of-interest.webp" alt="{{alt_shot_bank}}" width="440" height="956" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- For parents -->
+    <section class="section band band-pink" id="parents">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">{{parents_eyebrow}}</p>
+          <h2>{{parents_title}}</h2>
+          <p>{{parents_lead}}</p>
+        </header>
+        <div class="parents-top">
+          <figure class="phone phone-crop">
+            <img src="../static/img/shots/{{lang}}/add-videos-channel-with-warnings.webp" alt="{{alt_shot_add}}" width="440" height="956" loading="lazy">
+          </figure>
+          <div class="parents-copy">
+            <h3>{{approve_title}}</h3>
+            <p>{{approve_text}}</p>
+            <h3>{{warnings_title}}</h3>
+            <p>{{warnings_text}}</p>
+            <ul class="chips" aria-label="{{warnings_title}}">
+              <li>{{flag_shopping}}</li>
+              <li>{{flag_blindbox}}</li>
+              <li>{{flag_clickbait}}</li>
+              <li>{{flag_pranks}}</li>
+              <li>{{flag_scary}}</li>
+              <li>{{flag_sponsored}}</li>
+            </ul>
+          </div>
+          <figure class="phone phone-crop">
+            <img src="../static/img/shots/{{lang}}/kid-settings-addition.webp" alt="{{alt_shot_settings}}" width="440" height="956" loading="lazy">
+          </figure>
+        </div>
+        <ul class="grid-features">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <h3>{{p_pin_title}}</h3><p>{{p_pin_text}}</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16"/><path d="M7 16V9"/><path d="M12 16V5"/><path d="M17 16v-4"/></svg>
+            <h3>{{p_stats_title}}</h3><p>{{p_stats_text}}</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7"/><path d="M12 9v4l3 2"/><path d="M9 3h6"/></svg>
+            <h3>{{p_breaks_title}}</h3><p>{{p_breaks_text}}</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg>
+            <h3>{{p_price_title}}</h3><p>{{p_price_text}}</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 19a5 5 0 0 1 10 0"/><path d="M11 19a5 5 0 0 1 10 0"/></svg>
+            <h3>{{p_family_title}}</h3><p>{{p_family_text}}</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3L20 9"/><path d="M20 4v5h-5"/><path d="M20 12a8 8 0 0 1-14 5.3L4 15"/><path d="M4 20v-5h5"/></svg>
+            <h3>{{p_sync_title}}</h3><p>{{p_sync_text}}</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.2 10.8l7.6-4.6"/><path d="M8.2 13.2l7.6 4.6"/></svg>
+            <h3>{{p_share_title}}</h3><p>{{p_share_text}}</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg>
+            <h3>{{p_assign_title}}</h3><p>{{p_assign_text}}</p>
+          </li>
+        </ul>
+        <div class="cinema">
+          <img src="../static/img/cinema-closed.webp" alt="{{alt_cinema}}" width="480" height="480" loading="lazy">
+          <div>
+            <h3>{{cinema_title}}</h3>
+            <p>{{cinema_text}}</p>
+          </div>
+          <img src="../static/img/bucky-break.webp" alt="{{alt_break}}" width="480" height="480" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy -->
+    <section class="section" id="privacy">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">{{privacy_eyebrow}}</p>
+          <h2>{{privacy_title}}</h2>
+          <p>{{privacy_lead}}</p>
+        </header>
+        <div class="privacy-grid">
+          <div class="privacy-card stored">
+            <h3>{{stored_title}}</h3>
+            <p class="small">{{stored_intro}}</p>
+            <ul>
+              <li>{{stored_1}}</li>
+              <li>{{stored_2}}</li>
+              <li>{{stored_3}}</li>
+              <li>{{stored_4}}</li>
+              <li>{{stored_5}}</li>
+            </ul>
+          </div>
+          <div class="privacy-card never">
+            <h3>{{never_title}}</h3>
+            <p class="small">{{never_intro}}</p>
+            <ul>
+              <li>{{never_1}}</li>
+              <li>{{never_2}}</li>
+              <li>{{never_3}}</li>
+              <li>{{never_4}}</li>
+              <li>{{never_5}}</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="privacy-notes">
+          <li><strong>{{note1_title}}</strong> {{note1_text}}</li>
+          <li><strong>{{note2_title}}</strong> {{note2_text}}</li>
+          <li><strong>{{note3_title}}</strong> {{note3_text}}</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section band band-cream" id="faq">
+      <div class="wrap faq-wrap">
+        <header class="section-head">
+          <p class="eyebrow">{{faq_eyebrow}}</p>
+          <h2>{{faq_title}}</h2>
+        </header>
+        <div class="faq">
+          <details><summary>{{faq1_q}}</summary><p>{{faq1_a}}</p></details>
+          <details><summary>{{faq2_q}}</summary><p>{{faq2_a}}</p></details>
+          <details><summary>{{faq3_q}}</summary><p>{{faq3_a}}</p></details>
+          <details><summary>{{faq4_q}}</summary><p>{{faq4_a}}</p></details>
+          <details><summary>{{faq5_q}}</summary><p>{{faq5_a}}</p></details>
+          <details><summary>{{faq6_q}}</summary><p>{{faq6_a}}</p></details>
+          <details><summary>{{faq7_q}}</summary><p>{{faq7_a}}</p></details>
+          <details><summary>{{faq8_q}}</summary><p>{{faq8_a}}</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Early access -->
+    <section class="section" id="early-access">
+      <div class="wrap">
+        <div class="cta">
+          <img src="../static/img/bucky-celebrating.webp" alt="" width="320" height="276" loading="lazy">
+          <div>
+            <h2>{{cta_title}}</h2>
+            <p>{{cta_text}}</p>
+            <!-- TODO: real contact address or sign-up form (no backend yet) -->
+            <a class="btn btn-primary" href="mailto:hello@example.com?subject={{cta_mail_subject|url}}" data-todo="contact">{{cta_long}}</a>
+            <p class="small">{{cta_small}}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <img src="../static/img/logo.webp" alt="Bucky" width="400" height="164" class="footer-logo" loading="lazy">
+        <p>{{footer_tagline}}</p>
+      </div>
+      <div>
+        <h2 class="footer-head">{{footer_credits}}</h2>
+        <p class="small">{{credits_text}}</p>
+      </div>
+      <div>
+        <h2 class="footer-head">{{footer_language}}</h2>
+        <ul class="footer-langs"><li><a href="../en/" hreflang="en" lang="en" data-lang-switch="en">English</a></li><li><a href="../pl/" hreflang="pl" lang="pl" data-lang-switch="pl">Polski</a></li></ul>
+        <p class="small">{{footer_legal}}</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

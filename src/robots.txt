@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# TODO: Sitemap: https://<domain>/sitemap.xml once the domain is chosen
