@@ -81,16 +81,16 @@ deployed from here. Publish the contents of `website/dist/` (for example
 with `actions/upload-pages-artifact` + `actions/deploy-pages`, running
 `python3 website/build.py` first). `dist/` already contains:
 
-- `CNAME` with `bucky.pl` (from `cname` in `site.json`),
+- `CNAME` with `bucky.club` (from `cname` in `site.json`),
 - `404.html` (root-relative links, as GitHub Pages serves it at any path),
 - `.nojekyll`, `robots.txt` and `sitemap.xml`.
 
 Links between pages are relative, so the site also works from a subfolder
 (except the 404 page). Absolute URLs (canonical, hreflang, `og:image`,
-sitemap) come from `site_url` (`https://bucky.pl`). When an international
-domain exists, set it per language in `language_site_urls`
-(e.g. `{"en": "https://<domain>"}`) and add it to `domain_languages`; no
-code changes needed.
+sitemap) come from `site_url` (`https://bucky.club`), the one main domain.
+The other domains redirect to it: buckyclub.com and bucky.kids forward to
+https://bucky.club (GoDaddy), and bucky.pl lands on https://bucky.club/pl/
+(the noisy/bucky-pl-redirect Pages site), so Polish visitors stay in Polish.
 
 ### Images and screenshots
 
@@ -120,10 +120,6 @@ pyftsubset assets/fonts/Fredoka-Bold.ttf --flavor=woff2 --layout-features='*' \
 
 ## TODO
 
-- **Deployment.** GitHub Pages with bucky.pl is planned; the workflow and
-  DNS are not set up here.
-- **International domain.** Not chosen; set `language_site_urls` and
-  `domain_languages` in `site.json` when it is.
 - **Contact / early access.** The button is a `mailto:hello@example.com`
   placeholder (marked `data-todo="contact"` and with a TODO comment in
   `src/page.html`). Replace with the real address or a sign-up form.
