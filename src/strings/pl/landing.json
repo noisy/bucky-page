@@ -1,14 +1,6 @@
 {
-  "lang": "pl",
-  "og_locale": "pl_PL",
-  "other_lang": "en",
-  "other_lang_short": "EN",
-  "other_lang_name": "English (wersja angielska)",
-
   "meta_title": "Bucky - czas przed ekranem, na który dzieci zapracowały",
   "meta_description": "Aplikacja z filmami dla dzieci, w której oglądanie trzeba zdobyć w krótkich lekcjach matematyki i ortografii, a każdy film zatwierdził rodzic. Bez reklam, bez autoodtwarzania, bez zakładania konta.",
-  "skip_to_content": "Przejdź do treści",
-  "brand_home": "Bucky, strona główna",
   "nav_label": "Główna nawigacja",
   "nav_how": "Jak to działa",
   "nav_lessons": "Lekcje",
@@ -17,7 +9,6 @@
   "nav_faq": "Pytania",
   "cta_short": "Wczesny dostęp",
   "cta_long": "Poproś o wczesny dostęp",
-
   "hero_eyebrow": "Aplikacja z filmami dla dzieci, zrobiona przez rodziców",
   "hero_title": "Czas przed ekranem, na który dzieci <em>zapracowały</em>.",
   "hero_lead": "Dzieci oglądają tylko filmy zatwierdzone przez Ciebie. Każda minuta kosztuje kilka popcornów, a popcorny zdobywa się w krótkich, przyjaznych lekcjach: dodawanie, tabliczka mnożenia i dyktando. Bez negocjacji i bez łez, kiedy trzeba skończyć.",
@@ -30,7 +21,6 @@
   "hero_bubble": "Napełnijmy mnie!",
   "alt_bucky": "Bucky, uśmiechnięty różowo-miętowy kubełek popcornu, a wokół niego trzy małe ziarenka popcornu",
   "alt_shot_who": "Ekran startowy Bucky'ego z pytaniem \"Cześć! Kto dziś gra?\" i dwoma profilami dzieci",
-
   "promise_label": "Co obiecuje Bucky",
   "promise1_title": "Tylko to, co zatwierdzisz",
   "promise1_text": "Żadnych polecanych, żadnego wciągania w kolejne filmy. Dziecko widzi Twoją listę i nic więcej.",
@@ -38,7 +28,6 @@
   "promise2_text": "Oglądanie jest nagrodą za wysiłek, a zasady wyglądają jak gra.",
   "promise3_title": "Życzliwy z założenia",
   "promise3_text": "Bez karzących dźwięków, bez wyrzutów i bez presji odliczania. Bucky zawsze jest po stronie dziecka.",
-
   "how_eyebrow": "Jak to działa",
   "how_title": "Trochę nauki, trochę oglądania",
   "how_lead": "Bucky to kubełek popcornu, a popcorn to waluta. To, jak pełny jest Bucky, pokazuje, ile oglądania zostało, więc zrozumieją to nawet dzieci, które jeszcze nie czytają liczb.",
@@ -49,7 +38,6 @@
   "how3_title": "Oglądaj zatwierdzone filmy",
   "how3_text": "Wybierz coś z rodzinnej biblioteki. Każda rozpoczęta minuta kosztuje kilka popcornów, które w trakcie filmu wyskakują z Bucky'ego jeden po drugim.",
   "how_loop": "<strong>Gdy popcorny się skończą,</strong> film się zatrzymuje i zaczyna się krótka lekcja. Po jej ukończeniu film rusza dokładnie tam, gdzie stanął. Oglądanie kończy się naturalnie, bez kłótni.",
-
   "lessons_eyebrow": "Lekcje",
   "lessons_title": "Prawdziwe ćwiczenia w małych porcjach",
   "lessons_lead": "Rodzic wybiera, jakie lekcje dostaje każde dziecko i na jakim poziomie. Kilka minut dziennie szybko zmienia się w nawyk.",
@@ -71,7 +59,6 @@
   "alt_shot_split": "Lekcja mnożenia: 19 x 6 z klawiaturą numeryczną i przyciskiem podpowiedzi do rozkładania",
   "alt_shot_times": "Lekcja mnożenia: 7 x 8 z klawiaturą numeryczną",
   "alt_shot_dictation": "Lekcja dyktanda: krótkie opowiadanie z lukami i dwiema możliwymi pisowniami nad bieżącą luką",
-
   "kids_eyebrow": "Dla dzieci",
   "kids_title": "Kumpel, który docenia wysiłek",
   "kids_lead": "Bucky reaguje na wszystko, co robi dziecko, i nigdy się nie złości. Smutny bywa co najwyżej \"trochę głodny\".",
@@ -92,7 +79,6 @@
   "kids4_text": "Wyraźne, zaokrąglone cyfry, duże pola do stukania i obrazki zamiast menu, dla dzieci, które dopiero uczą się czytać.",
   "alt_bank": "Bucky przed małym budynkiem banku z workami popcornu",
   "alt_shot_bank": "Ekran banku Bucky'ego: \"Bank dał Ci 2 popcorny!\", 7 popcornów w ręku i 22 w banku przy 10% dziennie",
-
   "parents_eyebrow": "Dla rodziców",
   "parents_title": "Ustaw zasady raz. I odpocznij.",
   "parents_lead": "Tryb rodzica jest chroniony PIN-em. Wszystko ustawiasz osobno dla każdego dziecka, więc sześciolatek i dziewięciolatka dostają to, co do nich pasuje.",
@@ -128,7 +114,6 @@
   "cinema_text": "W czasie przerwy Bucky prosi o chwilę rozciągania i szybkie zadanie. Po przerwie kino może zostać zamknięte na jakiś czas, z przyjaznym odliczaniem zamiast kłótni. W międzyczasie dziecko może robić lekcje i zajrzeć do banku.",
   "alt_cinema": "Przytulne kino nocą ze zgaszonymi światłami i Bucky siedzący na schodach",
   "alt_break": "Uśmiechnięty Bucky obok przycisku pauzy",
-
   "privacy_eyebrow": "Bezpieczeństwo i prywatność",
   "privacy_title": "Jak najmniej danych o dzieciach",
   "privacy_lead": "Bucky w pełni działa na jednym urządzeniu bez żadnego konta. Nic wtedy nie opuszcza urządzenia, poza tym, że YouTube wczytuje zatwierdzone przez Ciebie filmy.",
@@ -152,7 +137,6 @@
   "note2_text": "Dziennik aktywności, z którego biorą się statystyki dla rodzica, jest tylko na urządzeniu.",
   "note3_title": "Tylko członkowie rodziny.",
   "note3_text": "Reguły bezpieczeństwa pozwalają czytać i zmieniać dane rodziny tylko jej członkom. Wylogowanie odłącza urządzenie od synchronizacji.",
-
   "faq_eyebrow": "Pytania",
   "faq_title": "O co pytają rodzice",
   "faq1_q": "Czy dziecko znajdzie w Buckym inne filmy?",
@@ -171,15 +155,10 @@
   "faq7_a": "Tak. Każde dziecko ma swój profil z własnymi popcornami, bankiem, lekcjami, ustawieniami i filmami, i wybiera go na ekranie startowym.",
   "faq8_q": "W jakich językach mówi Bucky?",
   "faq8_a": "Po polsku i po angielsku. Bucky używa języka urządzenia, a rodzic może go zmienić w trybie rodzica.",
-
   "cta_title": "Chcesz Bucky'ego dla swojej rodziny?",
   "cta_text": "Bucky jest we wczesnych testach z niewielką grupą rodzin. Napisz do nas, a damy znać, gdy będzie miejsce.",
   "cta_mail_subject": "Bucky - wczesny dostęp",
   "cta_small": "Bez newslettera i spamu. Tylko jedna wiadomość, gdy przyjdzie Twoja kolej.",
-
-  "footer_tagline": "Czas przed ekranem, na który dzieci zapracowały. Zrobione przez rodziców, najpierw dla własnych dzieci.",
-  "footer_credits": "Podziękowania",
-  "credits_text": "Grafiki Bucky'ego i popcornów powstały z pomocą fal.ai. Fonty: Fredoka i Nunito (SIL Open Font License). Przykładowe bajki: Big Buck Bunny i Caminandes 3, Blender Foundation (CC BY).",
-  "footer_language": "Język",
-  "footer_legal": "YouTube jest znakiem towarowym Google LLC. Bucky nie jest powiązany z YouTube ani Google ani przez nie wspierany."
+  "hero_download": "Pobierz na Androida",
+  "nav_download": "Pobierz"
 }

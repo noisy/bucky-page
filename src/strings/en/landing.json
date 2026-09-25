@@ -1,14 +1,6 @@
 {
-  "lang": "en",
-  "og_locale": "en_GB",
-  "other_lang": "pl",
-  "other_lang_short": "PL",
-  "other_lang_name": "Polski (Polish version)",
-
   "meta_title": "Bucky - screen time your kids earn",
   "meta_description": "A kids video app where watching is earned in short maths and spelling lessons, and every video was approved by a parent. No ads, no autoplay, no account needed.",
-  "skip_to_content": "Skip to content",
-  "brand_home": "Bucky, home",
   "nav_label": "Main",
   "nav_how": "How it works",
   "nav_lessons": "Lessons",
@@ -17,7 +9,6 @@
   "nav_faq": "FAQ",
   "cta_short": "Early access",
   "cta_long": "Get early access",
-
   "hero_eyebrow": "A video app for kids, made by parents",
   "hero_title": "Screen time your kids <em>earn</em>.",
   "hero_lead": "Kids watch only the videos you approved. Every minute costs a few Popcorn Pals, and kids earn Pals in short, friendly lessons: adding, times tables and spelling. No negotiating, no tears when it's over.",
@@ -30,7 +21,6 @@
   "hero_bubble": "Let's fill me up!",
   "alt_bucky": "Bucky, a smiling pink and mint popcorn bucket, with three little popcorn kernels floating around him",
   "alt_shot_who": "Bucky's start screen asking \"Hi there! Who's playing?\" with two kid profiles",
-
   "promise_label": "What Bucky promises",
   "promise1_title": "Only what you approved",
   "promise1_text": "No recommendations, no rabbit holes. Kids see your list and nothing else.",
@@ -38,7 +28,6 @@
   "promise2_text": "Watching feels like a reward for effort, and the rules feel like a game.",
   "promise3_title": "Kind by design",
   "promise3_text": "No punishing sounds, no guilt, no countdown pressure. Bucky is always on the kid's side.",
-
   "how_eyebrow": "How it works",
   "how_title": "Learn a little, watch a little",
   "how_lead": "Bucky is a popcorn bucket, and his popcorn is the currency. How full Bucky is shows how much watching is left, so even kids who don't read numbers yet get it.",
@@ -49,7 +38,6 @@
   "how3_title": "Watch approved videos",
   "how3_text": "Pick something from the family library. Each started minute costs a few Pals, and they hop out of Bucky one by one while the video plays.",
   "how_loop": "<strong>When the Pals run out,</strong> the video pauses and a short lesson starts. Finish it, and the video picks up right where it stopped. Watching ends naturally, without a fight.",
-
   "lessons_eyebrow": "Lessons",
   "lessons_title": "Real practice, in bite-sized pieces",
   "lessons_lead": "A parent picks which lessons each kid gets and at what level. A few minutes a day adds up to a habit.",
@@ -71,7 +59,6 @@
   "alt_shot_split": "Times tables lesson: 19 x 6 with a number pad and a \"Split it myself\" help button",
   "alt_shot_times": "Times tables lesson: 7 x 8 with a number pad",
   "alt_shot_dictation": "Polish dictation lesson: a short story with gaps and two spelling options above the current gap",
-
   "kids_eyebrow": "For kids",
   "kids_title": "A buddy who celebrates effort",
   "kids_lead": "Bucky reacts to everything a kid does, and he is never cross. Sad is only ever \"a little hungry\".",
@@ -92,7 +79,6 @@
   "kids4_text": "Chunky rounded digits, big tap targets and pictures instead of menus, for kids who are still learning to read.",
   "alt_bank": "Bucky standing in front of a little bank building with bags of popcorn",
   "alt_shot_bank": "Bucky's bank screen: \"The bank gave you 2 Pals!\", 7 Pals in hand and 22 in the bank at 10% a day",
-
   "parents_eyebrow": "For parents",
   "parents_title": "Set the rules once. Then relax.",
   "parents_lead": "Parent mode sits behind a PIN. Everything is per kid, so the six-year-old and the nine-year-old each get what fits them.",
@@ -128,7 +114,6 @@
   "cinema_text": "When it's break time, Bucky asks for a stretch and a quick task. After a break the cinema can stay closed for a while, with a friendly countdown instead of an argument. Kids can still do lessons and visit the bank while they wait.",
   "alt_cinema": "A cosy cinema at night with the lights off and Bucky sitting on the steps",
   "alt_break": "Bucky smiling next to a pause button",
-
   "privacy_eyebrow": "Safety and privacy",
   "privacy_title": "Kids' data stays minimal",
   "privacy_lead": "Bucky works fully on one device without any account. Nothing leaves the device then, apart from YouTube loading the videos you approved.",
@@ -152,7 +137,6 @@
   "note2_text": "The activity log behind the parent stats lives on the device only.",
   "note3_title": "Only family members.",
   "note3_text": "Security rules let only members of a family read or change it. Signing out removes a device from syncing.",
-
   "faq_eyebrow": "FAQ",
   "faq_title": "Questions parents ask",
   "faq1_q": "Can my kid find other videos in Bucky?",
@@ -171,15 +155,10 @@
   "faq7_a": "Yes. Each kid has a profile with their own Pals, bank, lessons, settings and videos, and picks it on the start screen.",
   "faq8_q": "Which languages does Bucky speak?",
   "faq8_a": "English and Polish. Bucky follows the device language, and a parent can switch it in parent mode.",
-
   "cta_title": "Want Bucky for your family?",
   "cta_text": "Bucky is in early testing with a small group of families. Drop us a line and we'll let you know when there's room.",
   "cta_mail_subject": "Bucky early access",
   "cta_small": "No newsletter, no spam. Just one message when it's your turn.",
-
-  "footer_tagline": "Screen time your kids earn. Made by parents, for their own kids first.",
-  "footer_credits": "Credits",
-  "credits_text": "Bucky and the Popcorn Pals artwork made with fal.ai. Fonts: Fredoka and Nunito (SIL Open Font License). Sample cartoons: Big Buck Bunny and Caminandes 3 by the Blender Foundation (CC BY).",
-  "footer_language": "Language",
-  "footer_legal": "YouTube is a trademark of Google LLC. Bucky is not affiliated with or endorsed by YouTube or Google."
+  "hero_download": "Download for Android",
+  "nav_download": "Download"
 }

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{meta_title}}</title>
+  <meta name="description" content="{{meta_description}}">
+{{> head}}
+</head>
+<body>
+  <a class="skip" href="#main">{{skip_to_content}}</a>
+
+  <header class="site-header" data-header>
+    <div class="wrap header-row">
+      <a class="brand" href="{{home_href}}" aria-label="{{brand_home}}">
+        <img src="{{root}}static/img/logo.webp" alt="Bucky" width="400" height="164">
+      </a>
+      <div class="header-actions end">
+        <a class="lang" href="{{other_lang_href}}" hreflang="{{other_lang}}" lang="{{other_lang}}" data-lang-switch="{{other_lang}}">
+          <span aria-hidden="true">{{other_lang_short}}</span><span class="sr-only">{{other_lang_name}}</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="download">
+    <section class="wrap download-hero">
+      <img class="download-bucky" src="{{root}}static/img/bucky.webp" alt="{{alt_bucky}}" width="560" height="602" fetchpriority="high">
+      <div>
+        <h1>{{title}}</h1>
+        <p class="lead">{{intro}}</p>
+        <div class="download-actions">
+          <a class="btn btn-primary btn-big" href="{{apk_href}}" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>
+            {{download_button}}
+          </a>
+          <p class="small">{{version_label}} {{apk_version}}, {{requirements}}</p>
+        </div>
+        <p class="ios-note"><strong>{{ios_title}}</strong> {{ios_text}}</p>
+      </div>
+    </section>
+
+    <section class="wrap install" aria-labelledby="install-title">
+      <h2 id="install-title">{{install_title}}</h2>
+      <ol class="install-steps">
+        <li><strong>{{step1_title}}</strong> {{step1_text}}</li>
+        <li><strong>{{step2_title}}</strong> {{step2_text}}</li>
+        <li><strong>{{step3_title}}</strong> {{step3_text}}</li>
+        <li><strong>{{step4_title}}</strong> {{step4_text}}</li>
+      </ol>
+      <p class="install-note">{{warning_note}}</p>
+      <p class="install-note">{{update_note}}</p>
+    </section>
+  </main>
+
+{{> footer}}
+</body>
+</html>

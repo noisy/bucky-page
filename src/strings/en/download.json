@@ -1,0 +1,23 @@
+{
+  "meta_title": "Download Bucky for Android",
+  "meta_description": "Bucky is a kids video app where screen time is earned in short lessons, and every video was approved by a parent. Download the Android app.",
+  "alt_bucky": "Bucky, a smiling pink and mint popcorn bucket, with little popcorn kernels floating around him",
+  "title": "Bucky for Android",
+  "intro": "Bucky is a video app for kids where screen time is earned, not given. Kids watch only the videos a parent approved, and every minute costs a few Popcorn Pals that they earn in short, friendly lessons: adding, times tables and Polish spelling. No ads of its own, no autoplay, and it works without an account.",
+  "download_button": "Download for Android (APK)",
+  "version_label": "Version",
+  "requirements": "for 64-bit Android phones and tablets",
+  "ios_title": "iPhone and iPad:",
+  "ios_text": "coming soon. Test builds through TestFlight are available on request.",
+  "install_title": "How to install",
+  "step1_title": "Download.",
+  "step1_text": "Open this page on your Android phone or tablet and tap the button above.",
+  "step2_title": "Open the file.",
+  "step2_text": "Tap the download in the notification, or find bucky-latest.apk in your Downloads.",
+  "step3_title": "Allow the install.",
+  "step3_text": "The first time, Android asks to allow installing apps from this source (your browser or the Files app). Turn on \"Allow from this source\" and go back.",
+  "step4_title": "Install and open.",
+  "step4_text": "Tap Install, then Open. The first time you open parent mode, you choose a PIN.",
+  "warning_note": "Android will warn you that the app is not from the Play Store. That is expected: Bucky isn't in the store yet. If Play Protect asks, choose \"More details\" and then \"Install anyway\".",
+  "update_note": "To update, download the newest file from this page and install it over the old one. Pals, kids and settings stay where they are."
+}

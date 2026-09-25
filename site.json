@@ -1,0 +1,7 @@
+{
+  "pages": ["landing", "download"],
+  "apk": {
+    "path": "downloads/bucky-latest.apk",
+    "version": "0.0.0"
+  }
+}

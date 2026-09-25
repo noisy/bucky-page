@@ -1,0 +1,23 @@
+{
+  "meta_title": "Pobierz Bucky'ego na Androida",
+  "meta_description": "Bucky to aplikacja z filmami dla dzieci, w której czas przed ekranem zdobywa się w krótkich lekcjach, a każdy film zatwierdził rodzic. Pobierz aplikację na Androida.",
+  "alt_bucky": "Bucky, uśmiechnięty różowo-miętowy kubełek popcornu, a wokół niego małe ziarenka popcornu",
+  "title": "Bucky na Androida",
+  "intro": "Bucky to aplikacja z filmami dla dzieci, w której czas przed ekranem trzeba zdobyć, a nie dostaje się go za darmo. Dzieci oglądają tylko filmy zatwierdzone przez rodzica, a każda minuta kosztuje kilka popcornów, które zdobywa się w krótkich, przyjaznych lekcjach: dodawanie, tabliczka mnożenia i dyktando. Bez własnych reklam, bez autoodtwarzania i bez zakładania konta.",
+  "download_button": "Pobierz na Androida (APK)",
+  "version_label": "Wersja",
+  "requirements": "na 64-bitowe telefony i tablety z Androidem",
+  "ios_title": "iPhone i iPad:",
+  "ios_text": "już wkrótce. Wersje testowe przez TestFlight udostępniamy na prośbę.",
+  "install_title": "Jak zainstalować",
+  "step1_title": "Pobierz.",
+  "step1_text": "Otwórz tę stronę na telefonie lub tablecie z Androidem i stuknij przycisk powyżej.",
+  "step2_title": "Otwórz plik.",
+  "step2_text": "Stuknij pobrany plik w powiadomieniu albo znajdź bucky-latest.apk w folderze Pobrane.",
+  "step3_title": "Zezwól na instalację.",
+  "step3_text": "Za pierwszym razem Android poprosi o zgodę na instalowanie aplikacji z tego źródła (przeglądarki albo aplikacji Pliki). Włącz \"Zezwalaj z tego źródła\" i wróć.",
+  "step4_title": "Zainstaluj i otwórz.",
+  "step4_text": "Stuknij Zainstaluj, a potem Otwórz. Przy pierwszym wejściu do trybu rodzica ustawisz PIN.",
+  "warning_note": "Android ostrzeże, że aplikacja nie pochodzi ze Sklepu Play. To normalne: Bucky'ego jeszcze nie ma w sklepie. Jeśli zapyta Play Protect, wybierz \"Więcej szczegółów\", a potem \"Zainstaluj mimo to\".",
+  "update_note": "Aby zaktualizować, pobierz najnowszy plik z tej strony i zainstaluj go na starą wersję. Popcorny, dzieci i ustawienia zostają bez zmian."
+}
