@@ -199,8 +199,8 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
       radial-gradient(70% 35% at 10% 80%, rgba(143, 207, 168, 0.1), transparent 70%);
   }
 }
-.hero-grid { display: grid; gap: 8px; }
-.lead { font-size: 1.12rem; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+.lead { font-size: 1.2rem; }
 .hero-actions { display: grid; gap: 12px; margin: 22px 0 8px; }
 
 .hero-stage { position: relative; aspect-ratio: 1 / 1.14; margin: 8px 0 0; }
@@ -224,25 +224,26 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 @keyframes float { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(12deg); } }
 @media (prefers-reduced-motion: reduce) { .hero-bucky, .float-pal, .download-bucky { animation: none; } }
 
-.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
-.facts li {
-  display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 16px;
-  background: var(--surface); border: 1px solid var(--line); font-weight: 700; font-size: 0.9rem; line-height: 1.25;
+/* Benefit tiles: a picture and a few words each, instead of paragraphs.
+   Two per row on small phones (picture beside the words), three from 480px. */
+.benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
+.benefits li {
+  display: flex; align-items: center; gap: 8px; padding: 10px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow);
+  font: 600 0.95rem/1.2 var(--font-display); color: var(--heading); overflow-wrap: break-word;
 }
-.facts img { width: 28px; flex: none; }
+.benefits img { width: 40px; height: 40px; flex: none; object-fit: contain; filter: var(--art-shadow); }
+.benefits img.tile-art { object-fit: cover; border-radius: 12px; filter: none; }
+@media (min-width: 480px) {
+  .benefits { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .benefits li { flex-direction: column; justify-content: flex-start; padding: 14px 8px; text-align: center; }
+  .benefits img { width: 56px; height: 56px; }
+}
 
 /* Phone frame around real app screenshots */
 .phone { margin: 0; border-radius: 30px; padding: 7px; background: var(--phone-frame); box-shadow: var(--shadow); }
 .phone img { border-radius: 24px; width: 100%; aspect-ratio: 440 / 956; object-fit: cover; object-position: top; background: var(--cream); }
 .caption { margin: 14px 0 0; text-align: center; font-weight: 700; font-size: 0.95rem; }
-
-/* Promises */
-.promise { padding: 0 0 8px; }
-.promise-rail { --rail-card: 76%; }
-.promise-card { display: grid; gap: 6px; align-content: start; padding: 18px 20px 22px; }
-.promise-card img { width: 84px; margin-bottom: 4px; filter: var(--art-shadow); }
-.promise-card strong { font: 600 1.15rem/1.25 var(--font-display); color: var(--heading); }
-.promise-card span { color: var(--text-soft); font-size: 0.98rem; }
 
 /* Sections */
 .section { padding: var(--section-space) 0; }
@@ -452,7 +453,7 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   :root { --gutter: 32px; --section-space: 88px; }
   .hero-actions { display: flex; flex-wrap: wrap; }
   .hero-stage { max-width: 560px; width: 100%; margin: 12px auto 0; }
-  .promise-rail, .steps { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; margin: 0; padding: 6px 0 0; }
+  .steps { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; margin: 0; padding: 6px 0 0; }
   .lessons { grid-auto-flow: row; grid-template-columns: repeat(2, 1fr); overflow: visible; margin: 0; padding: 6px 0 0; gap: 18px; }
   .shots { --rail-card: 36%; }
   .section-head { text-align: center; max-width: 720px; margin: 0 auto 40px; }
@@ -489,10 +490,11 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   .lang-menu summary { height: 44px; }
 
   .hero { padding: 56px 0 72px; }
-  .hero-grid { grid-template-columns: 1.05fr 0.95fr; column-gap: 56px; align-items: center; }
+  .hero-grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); column-gap: 56px; align-items: center; }
   .hero-copy { grid-column: 1; grid-row: 1; }
   .hero-stage { grid-column: 2; grid-row: 1 / span 2; margin: 0; max-width: none; }
-  .facts { grid-column: 1; grid-row: 2; grid-template-columns: 1fr 1fr; align-self: start; }
+  .benefits { grid-column: 1; grid-row: 2; align-self: start; margin-top: 8px; }
+  .benefits img { width: 64px; height: 64px; }
   .lead { font-size: 1.22rem; max-width: 34em; }
   .bubble { font-size: 1.15rem; }
 
