@@ -1,0 +1,21 @@
+name: Checks
+
+# Runs on every branch and pull request, so a font without Polish letters
+# or a broken build shows up before it reaches main (which deploys live).
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check the fonts have every Polish letter
+        run: pip install fonttools brotli && python3 tools/check_fonts.py
+      - name: Build the site
+        run: python3 build.py

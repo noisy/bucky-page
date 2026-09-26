@@ -53,8 +53,9 @@ key.
 | `src/404.html`, `src/robots.txt` | Site-root files; the build adds `CNAME`, `.nojekyll` and `sitemap.xml` |
 | `static/css/site.css` | All styling, mobile first: base rules for 360-430px phones, `min-width` queries add tablet (600px), laptop (900px) and wide (1100px). Brand tokens from the app palette, light and dark (`prefers-color-scheme`) |
 | `static/js/site.js` | Remembers the language picked in the switcher, closes the menus, hides the phone download dock while the hero button is on screen. The page works without it |
-| `static/fonts/` | Fredoka and Nunito (SIL OFL), subset to Latin and Polish letters as woff2 |
+| `static/fonts/` | Fredoka and Nunito (SIL OFL, licences next to them), subset to Latin and Polish letters as woff2 |
 | `static/img/` | Optimised WebP artwork and app screenshots (generated, see below) |
+| `tools/check_fonts.py` | Fails if a font in `static/fonts/` lacks a Polish letter |
 | `tools/prepare_images.py` | Regenerates `static/img/` (all widths and the manifest) from the app repo art and screenshots |
 
 ### Languages
@@ -121,7 +122,10 @@ the site.
 
 ### Fonts
 
-Regenerated from `assets/fonts/` with fontTools:
+Regenerated from the app's `assets/fonts/` with fontTools. The app's
+Fredoka already has the Polish letters upstream lacks (its
+`scripts/fonts/add_polish_letters.py`), so subset those files, not the
+upstream ones:
 
 ```sh
 pyftsubset assets/fonts/Fredoka-Bold.ttf --flavor=woff2 --layout-features='*' \
@@ -130,6 +134,10 @@ pyftsubset assets/fonts/Fredoka-Bold.ttf --flavor=woff2 --layout-features='*' \
 ```
 
 (the same for Fredoka-SemiBold, Nunito-Regular and Nunito-Bold).
+
+`python3 tools/check_fonts.py` (needs `pip install fonttools brotli`) fails
+if any font in `static/fonts/` lacks a letter of the Polish alphabet. CI runs
+it on every branch and before each deploy.
 
 ## TODO
 
