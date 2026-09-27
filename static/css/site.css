@@ -272,8 +272,11 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .film { max-width: 880px; margin: 0 auto 28px; }
 .film-video {
   display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--surface);
-  border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); object-fit: cover;
+  border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); object-fit: contain;
 }
+/* Full screen: show the whole 16:9 film, letterboxed, never cropped. */
+.film-video:fullscreen { border: 0; border-radius: 0; box-shadow: none; background: #000; object-fit: contain; }
+.film-video:-webkit-full-screen { border: 0; border-radius: 0; box-shadow: none; background: #000; object-fit: contain; }
 .film figcaption { margin-top: 10px; text-align: center; font: 700 1.05rem/1.3 var(--font-display); color: var(--text-soft); }
 .meter {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; align-items: end; position: relative;
