@@ -92,6 +92,13 @@
           <p class="how-summary">{{how_summary}}</p>
           <p>{{how_lead}}</p>
         </header>
+        <figure class="film">
+          <video class="film-video" controls playsinline preload="none" poster="{{root}}static/video/bucky-film-poster.webp" aria-label="{{film_label}}">
+            <source src="{{root}}static/video/bucky-film-1080.mp4" type="video/mp4" media="(min-width: 1100px)">
+            <source src="{{root}}static/video/bucky-film-720.mp4" type="video/mp4">
+          </video>
+          <figcaption>{{film_caption}}</figcaption>
+        </figure>
         <ol class="meter" aria-label="{{meter_label}}">
           <li><img src="{{root}}static/img/fill-empty.webp" sizes="(min-width: 900px) 120px, 22vw" alt="" loading="lazy"><span>{{meter_empty}}</span></li>
           <li><img src="{{root}}static/img/fill-little.webp" sizes="(min-width: 900px) 120px, 22vw" alt="" loading="lazy"><span>{{meter_little}}</span></li>
