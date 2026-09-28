@@ -10,10 +10,15 @@ the screenshots rendered by its golden tests (not committed there), e.g.
   flutter test --tags screenshots --update-goldens test/components/screen_screenshots_test.dart
 Point BUCKY_APP_DIR at that checkout; by default it is the parent folder,
 which is right when this repo is the app's website/ submodule.
+The clock lesson's card is composed here from the app's day scene
+(tools/clock_card.html, screenshotted with headless Chrome; CHROME overrides
+where it lives).
 The output is committed, so this only runs when the art changes.
 """
 import json
 import os
+import subprocess
+import tempfile
 from pathlib import Path
 
 from PIL import Image, ImageDraw
@@ -23,6 +28,10 @@ APP = Path(os.environ.get("BUCKY_APP_DIR", SITE.parent))
 OUT = SITE / "static" / "img"
 SHOTS = APP / "test" / "components" / "screenshots" / "screens"
 SHOT_DEVICE = "iphone-16-pro-max"
+CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
+CLOCK_CARD = SITE / "tools" / "clock_card.html"
+CLOCK_CARD_SCENE = "assets/images/clock/scenes/breakfast.webp"
+CLOCK_CARD_SIZE = 1024
 QUALITY = 76
 WHITE_THRESHOLD = 40
 CREAM = (0xFE, 0xF6, 0xE2)
@@ -39,7 +48,9 @@ ARTWORK = [
     ("assets/images/pal.png", "pal", [96, 192]),
     ("assets/images/logo.png", "logo", [200, 400]),
     ("assets/images/lessons/addition.jpg", "lesson-addition", ART_WIDTHS),
+    ("assets/images/lessons/subtraction.jpg", "lesson-subtraction", ART_WIDTHS),
     ("assets/images/lessons/multiplication.jpg", "lesson-multiplication", ART_WIDTHS),
+    ("assets/images/lessons/division.jpg", "lesson-division", ART_WIDTHS),
     ("assets/images/lessons/dictation.jpg", "lesson-dictation", ART_WIDTHS),
     ("assets/images/bank.jpg", "bank", ART_WIDTHS),
     ("assets/images/bank-building.jpg", "bank-building", ART_WIDTHS),
@@ -114,6 +125,22 @@ def social_card() -> Image.Image:
     return card
 
 
+def clock_card() -> Image.Image:
+    """The clock lesson's card: level 1, a picture of Bucky's day with its hour badge over the clock."""
+    page = CLOCK_CARD.read_text()
+    page = page.replace("{{scene}}", (APP / CLOCK_CARD_SCENE).as_uri())
+    page = page.replace("{{font}}", (SITE / "static/fonts/Fredoka-Bold.woff2").as_uri())
+    with tempfile.TemporaryDirectory() as folder:
+        html, png = Path(folder) / "card.html", Path(folder) / "card.png"
+        html.write_text(page)
+        subprocess.run(
+            [CHROME, "--headless=new", "--hide-scrollbars", f"--window-size={CLOCK_CARD_SIZE},{CLOCK_CARD_SIZE}",
+             f"--screenshot={png}", html.as_uri()],
+            check=True, capture_output=True,
+        )
+        return Image.open(png).convert("RGB")
+
+
 def without_white_background(image: Image.Image) -> Image.Image:
     """Makes the white around a sheet drawing transparent, so it sits on dark pages."""
     image = image.convert("RGBA")
@@ -127,6 +154,8 @@ def main() -> None:
         old.unlink()
     for source, name, widths in ARTWORK:
         save_variants(Image.open(APP / source), name, widths)
+
+    save_variants(clock_card(), "lesson-clock", ART_WIDTHS)
 
     for sheet_path, crops in SHEET_CROPS.items():
         sheet = Image.open(APP / sheet_path).convert("RGB")

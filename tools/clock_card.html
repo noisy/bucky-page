@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- The clock lesson's card art (static/img/lesson-clock): level 1 of the lesson,
+     Bucky's breakfast with its "8" badge and the clock the kid turns.
+     tools/prepare_images.py fills in {{scene}} and {{font}} and screenshots it at 1024x1024. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Fredoka"; font-weight: 700; src: url("{{font}}") format("woff2"); }
+  html, body { margin: 0; width: 1024px; height: 1024px; overflow: hidden; }
+  body {
+    background: radial-gradient(circle at 50% 42%, #F6F3A0 0%, #BDEFC4 45%, #8EEAC4 100%);
+    font-family: "Fredoka", sans-serif;
+    color: #6E424B;
+  }
+  .scene {
+    position: absolute; left: 152px; top: 40px; width: 720px;
+    border: 8px solid #6E424B; border-radius: 48px; overflow: hidden;
+    box-shadow: 0 14px 0 rgba(110, 66, 75, 0.14);
+  }
+  .scene img { display: block; width: 100%; }
+  .badge {
+    position: absolute; top: 22px; right: 22px;
+    display: flex; align-items: center; gap: 10px;
+    padding: 6px 30px 6px 20px;
+    background: #fff; border: 8px solid #6E424B; border-radius: 999px;
+    font-size: 92px; font-weight: 700; line-height: 1.1;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.15);
+  }
+  .badge .sun { font-size: 70px; }
+  .clock { position: absolute; left: 322px; top: 618px; width: 380px; height: 380px; }
+</style>
+</head>
+<body>
+  <div class="scene">
+    <img src="{{scene}}" alt="">
+    <div class="badge"><span class="sun">&#9728;&#65039;</span>8</div>
+  </div>
+  <svg class="clock" viewBox="0 0 380 380" aria-hidden="true">
+    <circle cx="190" cy="190" r="178" fill="#FFFDF7" stroke="#6E424B" stroke-width="14"/>
+    <g id="numbers" font-family="Fredoka" font-weight="700" font-size="40" fill="#6E424B" text-anchor="middle" dominant-baseline="central"></g>
+    <line x1="190" y1="190" x2="190" y2="86" stroke="#F4949C" stroke-width="10" stroke-linecap="round"/>
+    <line x1="190" y1="190" x2="279" y2="190" stroke="#6E424B" stroke-width="17" stroke-linecap="round"/>
+    <circle cx="190" cy="190" r="14" fill="#EDC553" stroke="#6E424B" stroke-width="4"/>
+  </svg>
+  <script>
+    const numbers = document.getElementById("numbers");
+    for (let hour = 1; hour <= 12; hour++) {
+      const angle = (hour / 12 * 360 - 90) * Math.PI / 180;
+      const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      label.setAttribute("x", 190 + Math.cos(angle) * 132);
+      label.setAttribute("y", 190 + Math.sin(angle) * 132);
+      label.textContent = hour;
+      numbers.appendChild(label);
+    }
+  </script>
+</body>
+</html>

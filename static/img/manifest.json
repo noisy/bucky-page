@@ -154,6 +154,15 @@
    512
   ]
  },
+ "lesson-clock": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
  "lesson-dictation": {
   "ratio": 1.0,
   "widths": [
@@ -163,7 +172,25 @@
    512
   ]
  },
+ "lesson-division": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
  "lesson-multiplication": {
+  "ratio": 1.0,
+  "widths": [
+   240,
+   360,
+   440,
+   512
+  ]
+ },
+ "lesson-subtraction": {
   "ratio": 1.0,
   "widths": [
    240,
